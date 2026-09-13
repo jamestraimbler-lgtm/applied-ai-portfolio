@@ -23,6 +23,9 @@ committing an edition.
 example outcomes, CLI exit codes and relative documentation links.
 [Inspect the successful publication run](https://github.com/jamestraimbler-lgtm/applied-ai-portfolio/actions/runs/34753343486).
 
+[Repository privacy](repository-privacy.md) records the credential scan,
+ongoing checks and the limitation concerning retained historical metadata.
+
 ## Where the journal's claims come from
 
 | Claim | Source inspected | Public reproducibility |

@@ -27,3 +27,20 @@ build/
 healthchecks_ping_url
 ntfy_topic
 *.plist
+
+# Private credentials, exports and local audit material
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+id_rsa
+id_ed25519
+credentials.json
+secrets.json
+wallet.json
+*.bundle
+*.zip
+output/
+secrets/
+credentials/
