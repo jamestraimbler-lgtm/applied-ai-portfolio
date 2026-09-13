@@ -18,9 +18,10 @@ expected outcomes, and resolves relative document links. Link fragments and
 external URLs are not checked. The Git whitespace check is also run before
 committing an edition.
 
-[GitHub Actions](../.github/workflows/test.yml) is configured for Python 3.11,
-3.12 and 3.13. That is configuration, not a claim of a hosted CI run. The local
-results cover only the stated interpreter.
+[GitHub Actions](../.github/workflows/test.yml) passed on Python 3.11, 3.12 and
+3.13 on 13 September 2026. Each hosted job ran the same verifier: 25 unit tests,
+example outcomes, CLI exit codes and relative documentation links.
+[Inspect the successful publication run](https://github.com/jamestraimbler-lgtm/applied-ai-portfolio/actions/runs/34753343486).
 
 ## Where the journal's claims come from
 

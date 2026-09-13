@@ -61,8 +61,10 @@ Monitoring tests and the walkthrough simulate network calls and notifications.
 The verification command runs both test suites, checks example outcomes and
 exit codes, and checks local documentation links.
 
-**Last local verification: 13 September 2026 — 6 quality-gate tests and 19
-monitoring tests passed.** [Evidence and limits](docs/evidence.md).
+**Verified locally and on GitHub: 13 September 2026 — 6 quality-gate tests and 19
+monitoring tests passed.** Hosted checks passed on Python 3.11, 3.12 and 3.13.
+[View the test run](https://github.com/jamestraimbler-lgtm/applied-ai-portfolio/actions/runs/34753343486).
+[Evidence and limits](docs/evidence.md).
 
 ## What I want to contribute
 
