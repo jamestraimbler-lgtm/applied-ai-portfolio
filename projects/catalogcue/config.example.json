@@ -1,0 +1,25 @@
+{
+  "state_path": "catalogcue_state.json",
+  "timeout_seconds": 12,
+  "fetch_attempts": 3,
+  "fetch_backoff_seconds": 0.5,
+  "change_confirmations": 2,
+  "failure_confirmations": 2,
+  "ntfy_server": "https://ntfy.sh",
+  "summary": {
+    "enabled": true,
+    "hour_local": 18,
+    "timezone": "Europe/Amsterdam"
+  },
+  "targets": [
+    {
+      "name": "Example product",
+      "url": "https://example.com/",
+      "price_regex": null,
+      "price_change_pct": 5,
+      "in_stock_markers": ["in stock", "add to cart"],
+      "out_of_stock_markers": ["sold out", "out of stock"],
+      "content_regex": "<h1[^>]*>(.*?)</h1>"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{"step":"baseline","observed_price":100,"baseline_price":100.0,"confirmed_changes":0,"delivered":0,"pending":0,"engine_exit":0}
+{"step":"temporary-drop","observed_price":90,"baseline_price":100.0,"confirmed_changes":0,"delivered":0,"pending":0,"engine_exit":0}
+{"step":"price-restored","observed_price":100,"baseline_price":100.0,"confirmed_changes":0,"delivered":0,"pending":0,"engine_exit":0}
+{"step":"first-lower-observation","observed_price":90,"baseline_price":100.0,"confirmed_changes":0,"delivered":0,"pending":0,"engine_exit":0}
+{"step":"confirmed-but-offline","observed_price":90,"baseline_price":90.0,"confirmed_changes":1,"delivered":0,"pending":1,"engine_exit":1}
+{"step":"delivery-recovered","observed_price":90,"baseline_price":90.0,"confirmed_changes":1,"delivered":1,"pending":0,"engine_exit":0}

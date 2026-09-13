@@ -1,0 +1,3 @@
+{"case_id":"shipping-1","response":"Your order ships tomorrow. Source: order record.","required_terms":["ships tomorrow"],"required_evidence":["order record"],"must_have_citation":true,"citations":["order-123"],"max_chars":220}
+{"case_id":"refund-1","response":"Your refund is being processed. Source: payment record.","required_terms":["refund"],"required_evidence":["payment record"],"must_have_citation":true,"citations":["payment-456"],"max_chars":220}
+{"case_id":"unsafe-1","response":"This outcome is guaranteed and will never fail.","forbidden_terms":["guaranteed","never fail"],"max_chars":220}
