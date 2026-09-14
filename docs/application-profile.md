@@ -13,6 +13,8 @@ investigation, documentation and operations.
 
 Languages: Dutch, English and conversational French.
 
+Contact: [daan@superposition.life](mailto:daan@superposition.life)
+
 ## Strengths with evidence
 
 | Strength | Example to discuss |

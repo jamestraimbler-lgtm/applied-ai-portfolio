@@ -14,6 +14,8 @@ samenkomen.
 
 **Talen:** Nederlands, Engels en Frans op conversatieniveau.
 
+**Contact:** [daan@superposition.life](mailto:daan@superposition.life)
+
 ## Sterke punten met voorbeelden
 
 | Sterk punt | Voorbeeld om te bespreken |

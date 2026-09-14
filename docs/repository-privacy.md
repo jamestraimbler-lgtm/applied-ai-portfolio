@@ -1,8 +1,9 @@
 # Repository privacy and credential checks
 
-The repository is private. It contains selected portfolio material, including
-the author's name and GitHub username. It excludes operational credentials,
-payment records, private project logs and original local development history.
+This repository contains selected portfolio material, including the author's
+name, GitHub username and preferred contact email, daan@superposition.life.
+It excludes operational credentials, payment records, private project logs
+and original local development history.
 
 The September 13, 2026 review checked the 24 portfolio files and both commits
 then reachable on the main branch, plus the initial replaced web commit.
@@ -15,12 +16,12 @@ used to check that error output is sanitized. It is not a working credential.
 
 ## September 14 portfolio update
 
-GitHub reported this repository as private, with only its owner listed as a
-collaborator. The update adds selected marketplace implementation excerpts,
-a generated video preview frame and project explanations. It excludes the
+The update adds selected marketplace implementation excerpts, a generated
+video preview frame and project explanations. It excludes the
 original application source tree, full project archives and operational data.
-CV files, application responses and personal contact details are prepared
-separately from this repository.
+CV files, application responses, phone number and portrait are prepared
+separately from this repository. The preferred email above is the public
+contact address.
 
 The local pre-upload review uses Gitleaks 8.30.1 for the working directory and
 all reachable Git history, plus supplemental checks for private data and
@@ -47,15 +48,10 @@ databases, archives and audit output. Ignore rules do not remove files already
 committed. Neither ignore rules nor automated scans guarantee that arbitrary
 personal information cannot be included in prose or an unknown file format.
 
-## Historical metadata limitation
+## Publication history
 
-The first web commit used the account's personal email. That commit was
-replaced; the current branch uses GitHub noreply addresses. Email privacy is
-enabled for future web commits, and this checkout uses a noreply address.
-The old commit remains retained by GitHub and is inaccessible without repository
-access while the repository is private. Removing a branch reference does not
-erase retained commit objects or copies previously obtained by others.
-
-[GitHub's removal guidance](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository)
-describes requesting removal of retained sensitive data through GitHub Support.
-No claim is made that the old email metadata has been erased from GitHub.
+The public portfolio has a curated Git history. Author and committer email
+addresses in that history use the preferred contact, daan@superposition.life.
+A prior copy is preserved separately as a private archive; it is not part
+of this public repository. This does not claim that earlier copies or
+retained objects have been erased from GitHub.

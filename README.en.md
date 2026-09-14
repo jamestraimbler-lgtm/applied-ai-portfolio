@@ -13,6 +13,8 @@ explains my contribution and a practical way to assess it.
 
 **Languages:** Dutch, English and conversational French.
 
+**Contact:** [daan@superposition.life](mailto:daan@superposition.life)
+
 ## Start here
 
 | You want to… | Read or try… |
@@ -82,5 +84,4 @@ outcomes and CLI exit codes, and resolves local documentation links.
 
 The introduction, profile, working approach, learning goals and Python demos
 are available in Dutch and English. Detailed technical case studies are in
-English. Repository access is arranged separately; a link alone does not
-grant access to a private repository.
+English.

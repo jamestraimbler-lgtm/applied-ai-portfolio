@@ -15,6 +15,8 @@ praktisch kunt beoordelen.
 
 **Talen:** Nederlands, Engels en Frans op conversatieniveau.
 
+**Contact:** [daan@superposition.life](mailto:daan@superposition.life)
+
 ## Begin hier
 
 | Je wilt… | Bekijk… |
@@ -87,5 +89,4 @@ controleert demo-uitkomsten, exitcodes en lokale documentatielinks.
 
 De introductie, het profiel, de werkwijze, leerdoelen en Python-demo's zijn
 beschikbaar in het Nederlands en Engels. Uitgebreide technische casussen zijn
-in het Engels. Toegang tot deze repository wordt apart geregeld; een link
-geeft op zichzelf geen toegang tot een privérepository.
+in het Engels.
