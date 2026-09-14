@@ -19,15 +19,20 @@ praktisch kunt beoordelen.
 
 | Je wilt… | Bekijk… |
 | --- | --- |
-| Zien hoe ik de onderdelen van een product verbind | [AI-marktplaats: accounts, inzendingen, beoordeling en koppelingen](projects/ai-marketplace/README.md) |
+| Zien hoe ik de onderdelen van een product verbind | [AImazon: accounts, inzendingen, beoordeling en koppelingen](projects/ai-marketplace/README.md) |
 | Een creatief proces met een afgerond resultaat zien | [Veggie Kitchen: een AI-videoaflevering van 117 seconden](projects/veggie-kitchen/README.md) |
 | Zelf een klein voorbeeld uitvoeren | [CatalogCue: bevestigde wijzigingen en betrouwbare meldingen](projects/catalogcue/README.nl.md) |
 | Mijn achtergrond en sterke punten begrijpen | [Profiel](docs/application-profile.nl.md) en [vaardigheden](docs/skills-and-next-steps.nl.md) |
 | Het bredere verhaal volgen | [Leertraject](journal/README.nl.md) en [projecteindpunten](docs/project-status.md) |
 
-## Uitgelicht: AI-marktplaats
+## Uitgelicht: AImazon
 
-Een marktplaats heeft meer nodig dan een cataloguspagina. Aanbieders hebben
+AImazon is mijn concept voor een marktplaats waar particulieren en bedrijven
+AI-agents kunnen vinden en makers hun agents kunnen aanbieden. Ik zie het als
+een "Amazon voor AI". Het prototype verkent het platform achter dat idee,
+met onder meer vermeldingen voor AI-tools en MCP-servers.
+
+Daar is meer voor nodig dan een cataloguspagina. Aanbieders hebben
 accounts en gestructureerde inzendingen nodig. Beoordelaars moeten informatie
 kunnen bekijken en beslissingen vastleggen. Externe gebeurtenissen moeten de
 juiste gegevens bijwerken.
@@ -39,11 +44,10 @@ Mijn TypeScript-prototype brengt die onderdelen samen:
 - Beoordeling van inzendingen, een wachtrij voor escalaties en vastgelegde menselijke beslissingen.
 - Verwerking van abonnementsgebeurtenissen en koppelingen met externe diensten.
 
-Dit zijn bruikbare bouwstenen voor interne hulpmiddelen en de administratie
-van programma's: registratie, aanmeldingen beoordelen en gegevens gelijk
-houden. Die ervaring is overdraagbaar; ik claim hiermee geen ervaring met het
-organiseren van een deelnemersprogramma. De casus bevat broncodefragmenten
-en benoemt precies wat nog moet gebeuren.
+Bij het bouwen van dit prototype heb ik gebruikersprocessen, databasegegevens,
+toegangsrechten en externe diensten met elkaar verbonden. Die bouwstenen zijn
+ook bruikbaar voor andere webproducten, bedrijfsautomatisering en interne
+hulpmiddelen. De casus bevat broncodefragmenten en benoemt wat nog moet gebeuren.
 
 **Eindpunt:** een uitgebreid applicatieprototype, met onaf werk aan facturatie
 en de gateway. [Architectuur, bewijs en beperkingen (Engels)](projects/ai-marketplace/README.md).
@@ -52,7 +56,7 @@ en de gateway. [Architectuur, bewijs en beperkingen (Engels)](projects/ai-market
 
 | Project | Wat het laat zien | Huidig eindpunt |
 | --- | --- | --- |
-| [AI-marktplaats](projects/ai-marketplace/README.md) | Webapplicatie, toegangsrechten, invoer, menselijke beoordeling en koppelingen | Beschreven prototype; de volledige applicatie staat niet in deze repository |
+| [AImazon](projects/ai-marketplace/README.md) | Webapplicatie, toegangsrechten, invoer, menselijke beoordeling en koppelingen | Beschreven prototype; de volledige applicatie staat niet in deze repository |
 | [Veggie Kitchen](projects/veggie-kitchen/README.md) | Gestructureerde scripts, beelden, animatie, stemmen, ondertiteling en montage | Eén afgeronde aflevering bewaard; breder serieproces gearchiveerd en onaf |
 | [CatalogCue](projects/catalogcue/README.nl.md) | Python, HTTP, toestand bewaren, bevestigen en opnieuw versturen | Uitvoerbaar offline voorbeeld; het bredere StoreWatch-product is onaf |
 | [LLM quality gate](demos/llm-quality-gate/README.nl.md) | Vaste controles op tekst en JSONL, CLI en tests | Kleine afgeronde demo; controleert geen feitelijke juistheid |

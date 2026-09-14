@@ -28,7 +28,12 @@ files alone do not establish that the whole lifecycle worked reliably.
 **Endpoint:** historical engineering context, with no public profit claim.
 [Project note](../projects/prediction-market-automation/README.md).
 
-## June 2026: a marketplace for AI tools
+## June 2026: the marketplace behind AImazon
+
+I call the product concept AImazon: a place for individuals and businesses
+to discover AI agents, and for creators to list them. The prototype explores
+the supporting platform; the intended product is broader than the completed
+implementation.
 
 Retained commits from 16–20 June cover a marketplace for MCP servers, with
 seller workflows, subscriptions, reviews and access control. The stack includes

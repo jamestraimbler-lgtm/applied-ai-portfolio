@@ -6,7 +6,7 @@ have been stopped, deployed or changed mode.
 
 | Track | Endpoint | Delivered evidence | Outside this endpoint |
 | --- | --- | --- | --- |
-| AI marketplace | Application prototype documented | Access, transactional intake, escalation and human-decision excerpts; architecture and concrete gaps | Complete sandbox workflow, cancellation, MCP forwarding, webhook replay safety and integration tests |
+| AImazon | Application prototype documented | Access, transactional intake, escalation and human-decision excerpts; architecture and concrete gaps | Complete sandbox workflow, cancellation, MCP forwarding, webhook replay safety and integration tests |
 | Veggie Kitchen | One finished episode; wider workflow archived | Preview frame and inspected 117-second render metadata; source-stage audit | Episode two, current-provider rerun, distribution package and audience or client outcomes |
 | LLM quality gate | Completed small demo | Included code, examples, exit codes and 6 passing tests | Semantic correctness and real-model evaluation |
 | CatalogCue / StoreWatch | Completed offline demonstration; wider product unfinished | Included engine, six-step runnable walkthrough, expected outcomes and 19 passing tests | User acceptance, hosted operation and customer adoption |

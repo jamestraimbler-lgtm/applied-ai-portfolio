@@ -38,14 +38,12 @@ onbewezen snelheidsclaims of expertbeoordelingen.
 
 ## Gebieden om te ontwikkelen
 
-- **Mensen en programma's organiseren:** deelnemers coördineren, werven,
-  inplannen en feedback uit een echte proef verwerken. De marktplaats biedt
-  relevante systeemonderdelen, geen ervaring met het uitvoeren van die taken.
+- **Samenwerken met gebruikers:** behoeften verzamelen, prioriteiten afspreken,
+  de oplevering afstemmen en feedback gebruiken om een echt proces te verbeteren.
 - **Samen opleveren en deployen:** gedeelde planning, review, uitrol, herstel
   en acceptatie door gebruikers.
-- **Context over AI-veiligheid:** onderzoeks- en programmadoelen begrijpen
-  voordat ik hulpmiddelen voorstel. Dit portfolio claimt geen ervaring met
-  AI-veiligheidsonderzoek of geavanceerde modelevaluatie.
+- **Kennis van het vakgebied:** gebruikers, inhoud en praktische beperkingen
+  van een team begrijpen voordat ik een hulpmiddel of proces voorstel.
 - **Verdieping waar de functie dat vraagt:** dit portfolio toont geen
   expertniveau in cloudinfrastructuur, Docker, RAG, modeltraining, fine-tuning
   of grote gedistribueerde systemen. Betaalde creatieve productie,

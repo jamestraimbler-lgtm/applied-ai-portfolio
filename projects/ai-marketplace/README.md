@@ -1,4 +1,8 @@
-# AI marketplace — connecting the product and its backend
+# AImazon — a marketplace for AI agents
+
+AImazon is my marketplace concept for individuals and businesses to discover
+AI agents, and for creators to list them. "Amazon for AI" is how I describe
+the idea: bringing discovery and the supporting platform into one place.
 
 **Endpoint: documented application prototype.** The project connects accounts,
 structured submissions, review decisions and external service events. It is
@@ -12,7 +16,13 @@ AI-assisted; [how I work](../../docs/how-i-work.md) describes that collaboration
 
 ## The problem
 
-A marketplace for AI tools and MCP servers needs a workflow behind its pages.
+The intended users have two sides: people or businesses looking for an AI
+agent, and creators who want to list their work. The inspected prototype
+implements parts of the platform behind that idea, including listings for
+AI tools and MCP servers. The product vision is broader than the completed
+implementation.
+
+That marketplace needs a workflow behind its pages.
 A seller should create a structured listing, submit it for review and understand
 the decision. Reviewers need the relevant context, and application records
 need to reflect events from external services.
@@ -90,14 +100,14 @@ security; those need focused tests and a full workflow review.
 
 ## How this transfers to other work
 
-Registration, applications and internal program tools share several needs:
+Web products, business automation and internal tools share several needs:
 structured intake, permissions, review queues, human decisions and records
 that stay in sync. This project gives me practical experience working with
 those components and connecting them across an application.
 
-A program also needs participant communication, scheduling, recruitment and
-feedback from people. Those are areas to learn in a team; building this
-prototype does not establish that I have already operated such a program.
+Taking the prototype further would add feedback from users, a complete
+tested journey and operational experience. Those are concrete next steps
+for product work in a team.
 
 ## Exact unfinished paths
 

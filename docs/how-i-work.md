@@ -62,5 +62,5 @@ Useful discussion points include:
 Useful tools and workflows, practical investigation, clear documentation and
 willingness to pick up unfamiliar work. I am seeking my first professional
 role, with shared objectives, direct feedback and increasing responsibility.
-Participant coordination, professional team delivery and real-user acceptance
+Collaboration with users, professional team delivery and real-user acceptance
 would extend the experience in these personal projects.

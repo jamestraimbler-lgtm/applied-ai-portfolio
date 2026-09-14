@@ -23,7 +23,11 @@ stappen zijn.
 
 **Eindpunt:** historische technische context; geen winstclaim.
 
-## Juni 2026: een marktplaats voor AI-tools
+## Juni 2026: de marktplaats achter AImazon
+
+Ik noem het productidee AImazon: een plek waar particulieren en bedrijven
+AI-agents kunnen vinden en makers ze kunnen aanbieden. Het prototype verkent
+het platform erachter; het beoogde product is breder dan wat nu is uitgewerkt.
 
 Bewaarde commits van 16–20 juni beschrijven een marktplaats voor MCP-servers.
 Ik werkte met AI aan onder meer TypeScript, Next.js, tRPC, Prisma, Zod,

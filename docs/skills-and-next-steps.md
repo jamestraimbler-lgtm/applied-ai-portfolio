@@ -11,7 +11,7 @@ my contribution directly.
 
 | Area | Concrete evidence | A useful assessment |
 | --- | --- | --- |
-| Connecting a product's backend | [Marketplace](../projects/ai-marketplace/README.md): access rules, intake, transactions, review and events | Follow one submission and explain the next missing step |
+| Connecting a product's backend | [AImazon](../projects/ai-marketplace/README.md): access rules, intake, transactions, review and events | Follow one submission and explain the next missing step |
 | Learning across a creative workflow | [Veggie Kitchen](../projects/veggie-kitchen/README.md): scene scripts, images, animation, voices, captions and one final episode | Explain the stages and investigate an intermediate failure |
 | Practical automation | [CatalogCue engine](../projects/catalogcue/storewatch.py): confirmation, state and retries | Adapt an agreed requirement and explain delivery behavior |
 | Structured information and checks | [Quality gate](../demos/llm-quality-gate/quality_gate.py): JSONL, explicit rules and exit codes | Distinguish malformed input from a valid record that fails a rule |
@@ -38,14 +38,12 @@ does not attach unsupported speed metrics or expert ratings to them.
 
 ## Areas to develop
 
-- **People and program operations:** participant coordination, recruitment,
-  scheduling and feedback from a real pilot. The marketplace provides relevant
-  systems patterns, not a record of having run those activities.
+- **Collaboration with users:** gathering requirements, agreeing priorities,
+  coordinating delivery and using feedback to improve a real workflow.
 - **Team delivery and deployment:** shared planning, review, rollout, recovery
   and acceptance by users.
-- **AI safety context:** understanding the research and program goals before
-  proposing tools to support them. This portfolio does not claim AI safety
-  research experience or advanced model-evaluation expertise.
+- **Domain knowledge:** learning a team's users, subject matter and practical
+  constraints before proposing a tool or workflow.
 - **Depth where a role needs it:** this portfolio does not establish expertise
   in cloud infrastructure, Docker, RAG, model training, fine-tuning or large
   distributed systems. It also does not establish paid creative production,

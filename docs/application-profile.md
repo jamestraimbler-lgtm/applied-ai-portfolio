@@ -17,16 +17,17 @@ Languages: Dutch, English and conversational French.
 
 | Strength | Example to discuss |
 | --- | --- |
-| Connecting a complete workflow | [AI marketplace](../projects/ai-marketplace/README.md): accounts and roles, validated intake, database transactions, submission review and external events |
+| Connecting a complete workflow | [AImazon](../projects/ai-marketplace/README.md): accounts and roles, validated intake, database transactions, submission review and external events |
 | Learning across tools and domains | [Veggie Kitchen](../projects/veggie-kitchen/README.md): structured scripts, generated scene media, voices, captions and assembly into one finished episode |
 | Handling operational details | [CatalogCue](../projects/catalogcue/README.md): distinguish a temporary change from a confirmed one and retain failed notifications |
 | Checking a result instead of accepting a claim | [Quality gate](../demos/llm-quality-gate/README.md): explicit rules and tests; [research](../projects/decision-systems/README.md): identify incomplete or misleading evidence |
 | Leaving usable context | [Project endpoints](project-status.md) and a [learning journal](../journal/README.md): explain what exists, what stops here and a sensible next task |
 
-The marketplace's intake and review patterns are relevant to registration,
-application processing and internal program tools. Coordinating participants
-and running a real program would add new experience beyond these personal
-software projects.
+AImazon is my concept for a marketplace where individuals and businesses can
+find AI agents and creators can list them. Building its prototype connects
+the product idea to accounts, submissions, review and integrations. That
+experience is relevant to web applications, business automation and internal
+tools; feedback from real users is the next step.
 
 ## Learning background
 
@@ -39,7 +40,7 @@ higher-education qualification, and I am now seeking my first job.
 ## Interview introduction
 
 “I am a self-taught builder who enjoys figuring out unfamiliar problems and
-connecting the pieces needed to solve them. I have worked on an AI marketplace,
+connecting the pieces needed to solve them. I have worked on AImazon,
 a video-generation workflow and practical automation tools. I would like to
 bring that breadth to a team: understand the objective, build a useful first
 version, investigate what goes wrong and leave a clear handoff. I welcome a

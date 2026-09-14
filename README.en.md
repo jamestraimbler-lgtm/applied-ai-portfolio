@@ -17,15 +17,20 @@ explains my contribution and a practical way to assess it.
 
 | You want to… | Read or try… |
 | --- | --- |
-| See how I connect a product's moving parts | [AI marketplace: accounts, submissions, review and integrations](projects/ai-marketplace/README.md) |
+| See how I connect a product's moving parts | [AImazon: accounts, submissions, review and integrations](projects/ai-marketplace/README.md) |
 | See a creative workflow with a finished output | [Veggie Kitchen: a 117-second AI video episode](projects/veggie-kitchen/README.md) |
 | Run a small example | [CatalogCue: confirmed changes and reliable notifications](projects/catalogcue/README.md) |
 | Understand my background and strengths | [Profile](docs/application-profile.md) and [skills map](docs/skills-and-next-steps.md) |
 | Follow the wider story | [Learning journal](journal/README.md) and [project endpoints](docs/project-status.md) |
 
-## Featured project: AI marketplace
+## Featured project: AImazon
 
-A marketplace needs more than a catalogue page. Sellers need accounts and
+AImazon is my marketplace concept for people and businesses to discover AI
+agents, and for creators to list them. I think of it as an "Amazon for AI".
+The prototype explores the platform behind that idea, including listings
+for AI tools and MCP servers.
+
+That needs more than a catalogue page. Sellers need accounts and
 structured submissions; reviewers need context and a way to make decisions;
 external events need to update the right records.
 
@@ -36,10 +41,10 @@ My TypeScript prototype brings those concerns together:
 - Submission review, an escalation queue and recorded human decisions.
 - Subscription-event handling and integration with external services.
 
-These are useful foundations for internal tools and program administration:
-registration, application review and keeping records in sync. That is a
-transferable pattern, rather than a claim that I have already run a participant
-program. The case study includes source excerpts and specific remaining work.
+Building the prototype meant connecting the product's user journeys,
+database records, permissions and external services. Those patterns also
+apply to other web products, business automation and internal tools.
+The case study includes source excerpts and specific remaining work.
 
 **Endpoint:** a substantial application prototype, with unfinished billing
 and gateway paths. [Architecture, evidence and limits](projects/ai-marketplace/README.md).
@@ -48,7 +53,7 @@ and gateway paths. [Architecture, evidence and limits](projects/ai-marketplace/R
 
 | Project | What it demonstrates | Current endpoint |
 | --- | --- | --- |
-| [AI marketplace](projects/ai-marketplace/README.md) | Web application, permissions, structured intake, human review and service integration | Documented prototype; full application is not included here |
+| [AImazon](projects/ai-marketplace/README.md) | Web application, permissions, structured intake, human review and service integration | Documented prototype; full application is not included here |
 | [Veggie Kitchen](projects/veggie-kitchen/README.md) | Structured scripts, generated images, animation, voices, captions and video assembly | One finished episode retained; wider series pipeline archived and unfinished |
 | [CatalogCue](projects/catalogcue/README.md) | Python, HTTP, persistent state, confirmation and delivery retries | Runnable offline sample; wider StoreWatch product unfinished |
 | [LLM quality gate](demos/llm-quality-gate/README.md) | Explicit text and JSONL checks, CLI and tests | Completed small demo; does not establish factual correctness |

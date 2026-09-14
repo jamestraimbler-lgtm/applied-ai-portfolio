@@ -65,7 +65,7 @@ Mogelijke gespreksonderwerpen:
 Bruikbare hulpmiddelen en processen, praktisch onderzoek, duidelijke
 documentatie en bereidheid onbekend werk op te pakken. Ik zoek mijn eerste
 professionele functie, met gedeelde doelen, directe feedback en toenemende
-verantwoordelijkheid. Deelnemers coördineren, professioneel samenwerken en
+verantwoordelijkheid. Met gebruikers afstemmen, professioneel samenwerken en
 acceptatie door echte gebruikers zouden mijn projectervaring verbreden.
 
 [Profiel](application-profile.nl.md) · [Vaardigheden](skills-and-next-steps.nl.md) · [Startpagina](../README.md)
