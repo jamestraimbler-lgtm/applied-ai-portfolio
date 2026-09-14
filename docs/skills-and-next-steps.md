@@ -1,10 +1,12 @@
+[Nederlands](skills-and-next-steps.nl.md) · [English](skills-and-next-steps.md)
+
 # Strengths, exposure and next learning steps
 
 This map describes project evidence, not a numerical rating of my ability.
 The work was substantially AI-assisted. Explaining, changing and debugging
 an artifact with a reviewer is a separate demonstration of my understanding.
 
-## Strongest public evidence
+## Strongest concrete evidence
 
 | Area | Concrete evidence | Interview discussion |
 | --- | --- | --- |
@@ -27,7 +29,7 @@ evaluation. “Expert” or “independent mastery” would exceed the reviewed 
 | MCP and JSON-RPC | Probe, test-server and gateway work | Forward requests and test authorization failures |
 | REST APIs and event data | Monitoring sample and research source | Support an integration with agreed service expectations |
 | Local scheduling and diagnostics | Original monitoring and research scripts | Deployment, rollback and incident response with a team |
-| Git and GitHub Actions | Local commits and checked-in Python workflow | Reviewed pull requests and a successful hosted workflow |
+| Git and GitHub Actions | Commits and successful GitHub checks | Reviewed pull requests and contributions in a development team |
 | Model APIs and AI-assisted development | Minimal OpenRouter client and project work | A useful model feature evaluated on held-out examples |
 
 ## Not established here

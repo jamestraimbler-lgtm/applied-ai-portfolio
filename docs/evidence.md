@@ -1,6 +1,6 @@
 # Evidence and verification — 13 September 2026
 
-## Reproduce the public checks
+## Reproduce the checks
 
 Run from the repository root:
 
@@ -28,7 +28,7 @@ ongoing checks and the limitation concerning retained historical metadata.
 
 ## Where the journal's claims come from
 
-| Claim | Source inspected | Public reproducibility |
+| Claim | Source inspected | Reproducibility for a reviewer with access |
 | --- | --- | --- |
 | Python monitoring and response checks | Included code, examples and tests | Runnable here |
 | Marketplace work in June | June 16–20 commits; source at `1ce28f9` | Case study and excerpt; full source author-held |
@@ -38,7 +38,7 @@ ongoing checks and the limitation concerning retained historical metadata.
 | Robinhood stop decision | September 8 `docs/BUILD-STATUS.md` and retained campaign account | Historical summary; not rerun here |
 | August monitoring/model work | Packaging/project-review history and current source files | Retrospective date anchors, not start dates |
 | September reassessment | Retained September 12 review report | Historical review, not current market guidance |
-| Portfolio creation | September 11 initial local commit `0ea9f50` and task record | Original local history retained privately; public history starts with the reviewed portfolio |
+| Portfolio creation | September 11 initial local commit `0ea9f50` and task record | Original local history retained privately; this repository starts with the reviewed portfolio |
 
 This is a selected software history, not a complete computer inventory.
 Folder names, installed apps and dependencies alone do not demonstrate skill.

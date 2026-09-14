@@ -1,3 +1,5 @@
+[Nederlands](how-i-work.nl.md) · [English](how-i-work.md)
+
 # How I work with AI
 
 AI coding tools contributed substantially to implementation, debugging, tests,

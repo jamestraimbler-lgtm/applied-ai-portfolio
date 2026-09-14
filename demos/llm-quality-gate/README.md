@@ -1,3 +1,5 @@
+[Nederlands](README.nl.md) · [English](README.md)
+
 # LLM Quality Gate
 
 A small, dependency-free evaluator for structured AI responses.

@@ -6,8 +6,8 @@ have been stopped, deployed or changed mode.
 
 | Track | Endpoint | Delivered evidence | Outside this endpoint |
 | --- | --- | --- | --- |
-| LLM quality gate | Completed small demo | Public code, examples, exit codes and 6 passing tests | Semantic correctness and real-model evaluation |
-| CatalogCue / StoreWatch | Completed offline demonstration; wider product unfinished | Public engine, six-step runnable walkthrough, expected outcomes and 19 passing tests | User acceptance, hosted operation and customer adoption |
+| LLM quality gate | Completed small demo | Included code, examples, exit codes and 6 passing tests | Semantic correctness and real-model evaluation |
+| CatalogCue / StoreWatch | Completed offline demonstration; wider product unfinished | Included engine, six-step runnable walkthrough, expected outcomes and 19 passing tests | User acceptance, hosted operation and customer adoption |
 | AI marketplace | Prototype documented | Source-inspected architecture, excerpt and concrete gaps | Cancellation, MCP forwarding, webhook replay safety and integration testing |
 | Prediction-market automation | Historical source study | Adapter, execution, records and reconciliation modules inspected | Canonical runnable version and reconciled financial outcomes |
 | MemeSniper v1 | Legacy engineering history | Operational and accounting lessons | No trading-product completion or profitability claim |

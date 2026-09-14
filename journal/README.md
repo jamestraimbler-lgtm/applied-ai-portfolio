@@ -1,3 +1,5 @@
+[Nederlandse samenvatting](README.nl.md) · [English](README.md)
+
 # My AI and software journey
 
 I have used AI tools to explore ideas and build software around them. Many
@@ -79,7 +81,7 @@ the original start date is not established here.
 
 Pages and networks are noisy. The engine requires repeated matching
 observations before alerting, records confirmed failures and recoveries, and
-retains failed notifications for retry. The public tests cover those cases.
+retains failed notifications for retry. The included tests cover those cases.
 
 The wider product remains unfinished. An engine and a sales offer do not
 establish customer adoption. The behavior under controlled tests is the part

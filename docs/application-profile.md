@@ -1,9 +1,11 @@
+[Nederlands](application-profile.nl.md) · [English](application-profile.md)
+
 # Daan Klein — application profile
 
 ## Short profile
 
 Self-taught developer in the Netherlands building automation and data-oriented
-software with Python, TypeScript and substantial AI assistance. My public
+software with Python, TypeScript and substantial AI assistance. The included
 examples cover API integration, structured validation, persistent state,
 failure handling and tests. I am looking for an entry-level automation,
 applied-AI, evaluation or integration role delivering defined tasks with
