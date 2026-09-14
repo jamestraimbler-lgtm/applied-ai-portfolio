@@ -8,9 +8,10 @@ rapporten en gesprekken; deze samenvatting is op 14 september toegevoegd.
 Het is geen dagboek dat tijdens de projecten is bijgehouden. AI hielp bij
 de software en de teksten. Projecten liepen deels tegelijk.
 
-De rode draad: informatie ophalen, een beslissing nemen, een actie uitvoeren
-en vastleggen wat er gebeurde. Gaandeweg werd het belangrijker om te bepalen
-wat een resultaat werkelijk bewijst.
+De projecten lopen uiteen van backendprocessen en automatisering tot
+creatieve productie. De rode draad is nieuwe onderdelen leren, ze verbinden
+en onderzoeken wat er gebeurt. Gaandeweg werden bruikbare mijlpalen en wat
+een resultaat werkelijk bewijst steeds belangrijker.
 
 ## Vroege automatisering
 
@@ -28,6 +29,9 @@ Bewaarde commits van 16–20 juni beschrijven een marktplaats voor MCP-servers.
 Ik werkte met AI aan onder meer TypeScript, Next.js, tRPC, Prisma, Zod,
 toegangscontrole en betalingen. De broncode bevat bijvoorbeeld validatie aan
 de API-grens en een transactie voor een review en de gemiddelde beoordeling.
+Ook de invoer van gerelateerde gegevens, een beoordelingsproces, een
+escalatiewachtrij en het vastleggen van menselijke beslissingen zijn in de
+backend uitgewerkt.
 
 Een latere controle liet zien dat de documentatie te algemeen was over
 ontbrekende integraties. Authenticatie en Checkout bestonden al, maar
@@ -35,6 +39,22 @@ annulering, MCP-verzoeken doorsturen en evaluatie hadden nog concrete gaten.
 
 **Eindpunt:** een beschreven prototype. De les is om de ontbrekende stap
 precies te benoemen.
+
+## Een gearchiveerd creatief experiment: Veggie Kitchen
+
+Bij dit project ging ik een ander gebied in: gestructureerde scènes omzetten
+in een geanimeerde aflevering. Het verbindt gegenereerde beelden, Kling-animatie,
+ElevenLabs-stemmen, Whisper voor timing en FFmpeg voor montage en ondertiteling.
+
+In het archief staat één afgeronde aflevering van 117 seconden in verticaal
+1080 × 1920-formaat met geluid en de bijbehorende tussenbestanden. Aflevering
+twee is gedeeltelijk gemaakt. Het archief is op 14 september onderzocht; een
+betrouwbare begindatum is hiermee niet vastgesteld.
+
+**Eindpunt:** één afgeronde aflevering met een [voorbeeldbeeld en casus](../projects/veggie-kitchen/README.md).
+Het bredere proces is gearchiveerd. Publicatie, kijkcijfers en commerciële
+resultaten zijn niet gecontroleerd. Ook creatief werk heeft baat bij duidelijke
+stappen en bewaarde tussenresultaten.
 
 ## Juli–september: leren van onbetrouwbare resultaten
 
@@ -58,7 +78,7 @@ probeert mislukte bezorging opnieuw.
 
 **Eindpunt:** een [uitvoerbaar monitoringvoorbeeld](../projects/catalogcue/README.nl.md).
 Het bredere product heeft nog gebruikersacceptatie en operationele overdracht
-nodig. Dit is het duidelijkste voorbeeld om tijdens een gesprek te bekijken.
+nodig. De offline demo is geschikt om tijdens een gesprek uit te voeren.
 
 ## Augustus: een model-API proberen
 
@@ -79,7 +99,11 @@ samengebracht. Op 13 september slaagden 19 monitoringtests en 6 tests voor
 de quality gate. Die laatste controleert vaste voorwaarden in tekst en
 JSONL; hij beoordeelt geen feitelijke juistheid.
 
-**Volgende stap:** een afgebakend stuk werk met feedback, echte gebruikers
-en een duidelijk criterium voor voltooiing.
+Op 14 september zijn de backend van de marktplaats en de creatieve
+videoproductie duidelijker in het portfolio opgenomen. Zo wordt de breedte
+zichtbaar, terwijl ieder project zijn eigen bewijs en eindpunt behoudt.
+
+**Volgende stap:** die breedte inzetten in een team, de context leren en een
+eerste bruikbaar resultaat opleveren met feedback en een duidelijk eindpunt.
 
 [Mijn profiel](../docs/application-profile.nl.md) · [Leerdoelen](../docs/skills-and-next-steps.nl.md) · [Werkwijze](../docs/how-i-work.nl.md) · [Startpagina](../README.md)

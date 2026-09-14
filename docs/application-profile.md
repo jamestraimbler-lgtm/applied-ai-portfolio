@@ -4,42 +4,53 @@
 
 ## Short profile
 
-Self-taught developer in the Netherlands building automation and data-oriented
-software with Python, TypeScript and substantial AI assistance. The included
-examples cover API integration, structured validation, persistent state,
-failure handling and tests. I am looking for an entry-level automation,
-applied-AI, evaluation or integration role delivering defined tasks with
-experienced colleagues and real users.
+Self-taught builder in the Netherlands seeking a first professional role.
+My personal projects span software applications, backend infrastructure,
+automation and AI media workflows. I enjoy moving between unfamiliar domains,
+working out how a process should fit together and making the result reviewable.
+I am interested in generalist work that combines practical building,
+investigation, documentation and operations.
 
 Languages: Dutch, English and conversational French.
 
-## Evidence to lead with
+## Strengths with evidence
 
-- **CatalogCue:** runnable product-page monitoring, observation confirmation,
-  failure/recovery handling and a notification outbox. An offline walkthrough
-  demonstrates confirmation and retry. All 19 tests passed on September 13.
-  The wider product is unfinished.
-- **LLM quality gate:** Python CLI, explicit checks, JSONL and machine-readable
-  results. All 6 tests passed on September 13. It checks structural rules,
-  not semantic truth.
-- **AI Marketplace prototype:** source-inspected TypeScript application with
-  validation, database transactions, Supabase auth, Stripe Checkout and MCP
-  exploration. Cancellation and gateway forwarding remain unfinished.
-- **Decision-system research:** investigation of data quality, timing, provider
-  failures and misleading measurements. Trading profitability was not established.
+| Strength | Example to discuss |
+| --- | --- |
+| Connecting a complete workflow | [AI marketplace](../projects/ai-marketplace/README.md): accounts and roles, validated intake, database transactions, submission review and external events |
+| Learning across tools and domains | [Veggie Kitchen](../projects/veggie-kitchen/README.md): structured scripts, generated scene media, voices, captions and assembly into one finished episode |
+| Handling operational details | [CatalogCue](../projects/catalogcue/README.md): distinguish a temporary change from a confirmed one and retain failed notifications |
+| Checking a result instead of accepting a claim | [Quality gate](../demos/llm-quality-gate/README.md): explicit rules and tests; [research](../projects/decision-systems/README.md): identify incomplete or misleading evidence |
+| Leaving usable context | [Project endpoints](project-status.md) and a [learning journal](../journal/README.md): explain what exists, what stops here and a sensible next task |
 
-## Interview opener
+The marketplace's intake and review patterns are relevant to registration,
+application processing and internal program tools. Coordinating participants
+and running a real program would add new experience beyond these personal
+software projects.
 
-“I am a self-taught developer who has used AI tools to build automation projects
-and learn from the problems they expose. My portfolio includes two small Python
-examples you can run and honest writeups of larger experiments. I am looking
-for a team where I can take a defined problem, explain my choices, get code
-review and become responsible for useful software.”
+## Learning background
 
-## Boundaries
+COVID disrupted my schooling, and I took a self-directed route into programming
+and AI-assisted projects. I could not find a course that matched the practical
+AI skills I wanted to develop, so I focused on learning by building, testing
+and improving my own projects. I do not have a completed secondary-school or
+higher-education qualification, and I am now seeking my first job.
 
-Personal prototypes are not presented as customer products, paper results as
-profit or AI-assisted code as proof of unaided expertise. Professional team
-delivery, deployment and user acceptance remain areas to build experience in.
+## Interview introduction
 
-[Journal](../journal/README.md) · [Skills and next steps](skills-and-next-steps.md)
+“I am a self-taught builder who enjoys figuring out unfamiliar problems and
+connecting the pieces needed to solve them. I have worked on an AI marketplace,
+a video-generation workflow and practical automation tools. I would like to
+bring that breadth to a team: understand the objective, build a useful first
+version, investigate what goes wrong and leave a clear handoff. I welcome a
+practical assessment using agreed tools.”
+
+## Working contribution and next step
+
+My projects use substantial AI assistance, including implementation, debugging,
+tests and writing. [How I work](how-i-work.md) explains the decisions I take
+responsibility for and how to assess my understanding. These are personal
+projects, with clearly marked prototypes and completed samples. Professional
+team delivery and acceptance by real users are my next steps.
+
+[Skills and learning goals](skills-and-next-steps.md) · [Portfolio](../README.en.md)

@@ -1,46 +1,66 @@
 [Nederlands](how-i-work.nl.md) · [English](how-i-work.md)
 
-# How I work with AI
+# How I work
 
-AI coding tools contributed substantially to implementation, debugging, tests,
-research and documentation. This journal was also prepared with AI assistance.
-The repository does not imply that I wrote every line unaided.
+I approach projects by asking what needs to happen, which pieces are missing
+and how to make the next result concrete. My interests cross software,
+automation and creative production. The common thread is connecting tools and
+processes, investigating problems and leaving enough context for the next step.
 
-The part I want to develop professionally is ownership of the problem:
-deciding what the software should do, questioning unsupported results, asking
-for evidence, making scope decisions and following through. The project
-conversations include corrections of overstated completion and requests to
-stop repeating unproductive experiments.
+## My contribution and AI's role
 
-## My working standard
+AI tools contributed substantially to implementation, debugging, tests,
+research and documentation, including this journal. I choose what to pursue,
+describe the intended behavior, ask for investigation, question unsupported
+results and make scope decisions. The retained project conversations include
+my corrections of overstated completion and requests to stop unproductive
+experiments.
 
-1. State the problem and what a useful result would look like.
-2. Inspect current behavior and evidence before changing it.
-3. Make an understandable change in the path that owns the behavior.
-4. Check an important failure case as well as success.
-5. Report what changed, what was verified and what remains uncertain.
-6. Leave a handoff or explicit stopping point.
+I do not claim every line as unaided work. An artifact demonstrates what was
+built; explaining a decision and adapting the result with agreed tools makes
+my own understanding visible. That is the way I welcome being assessed.
 
-This is a standard I am practicing. Projects sometimes grew too large and
-experiments lasted too long. That is a reason to improve scoping and feedback.
+## A working approach I am developing
 
-## A fair way to assess me
+1. Understand the purpose and define a useful first result.
+2. Map the needed workflow: information, people, tools and decisions.
+3. Investigate existing behavior and identify the missing or failing step.
+4. Build an understandable change and inspect intermediate results.
+5. Check the outcome, including a relevant failure case.
+6. Document the result, remaining uncertainty and a clear endpoint or handoff.
 
-Choose a small change in an included Python example. Ask me to explain the
-current behavior, propose an acceptance check, make the change with agreed
-tooling and explain the result. That assesses reasoning and ownership directly.
+Examples make this practical:
 
-Useful questions:
+- The [marketplace](../projects/ai-marketplace/README.md) connects accounts,
+  structured intake, review decisions and external events.
+- [Veggie Kitchen](../projects/veggie-kitchen/README.md) splits a creative output
+  into scripts, media, timing and assembly, with a finished episode at the end.
+- [CatalogCue](../projects/catalogcue/README.md) preserves failed notifications
+  and distinguishes unstable observations from confirmed changes.
 
-- Why wait for two observations? When could the monitor still miss a change?
-- What happens between sending a notification and persisting its result?
-- Why does citation presence fail to establish that an answer is supported?
-- Which marketplace action remains incomplete even though Checkout exists?
-- What evidence would justify reopening a stopped research hypothesis?
+Some projects grew too large and some experiments lasted too long. Clearer
+acceptance criteria and earlier stopping decisions are lessons I am applying
+through the [project register](project-status.md).
 
-## What I am looking for
+## A practical assessment
 
-A defined problem, code review, direct feedback and increasing responsibility
-for a small piece of useful software. I bring sustained curiosity and experience
-working through personal projects. Team delivery and real-user acceptance are
-the next things I need to demonstrate.
+Agree on an objective and allowed tools. Ask me to explain an existing workflow,
+identify one gap, propose a check, make a scoped change and explain the result.
+For a new task, I would start by clarifying the users and desired outcome,
+then work through the unfamiliar parts.
+
+Useful discussion points include:
+
+- How does a marketplace submission move from draft to a human decision?
+- What should happen if an external event arrives twice?
+- Which video-production stage would I inspect if captions were mistimed?
+- What happens if a notification is delivered just before a process crash?
+- What evidence would justify continuing or stopping a pilot?
+
+## What I want to contribute next
+
+Useful tools and workflows, practical investigation, clear documentation and
+willingness to pick up unfamiliar work. I am seeking my first professional
+role, with shared objectives, direct feedback and increasing responsibility.
+Participant coordination, professional team delivery and real-user acceptance
+would extend the experience in these personal projects.

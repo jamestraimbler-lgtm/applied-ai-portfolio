@@ -13,6 +13,22 @@ authenticated service URLs, wallet keys or local home-directory paths.
 The `example.com` token in the monitoring test is a deliberately fake value
 used to check that error output is sanitized. It is not a working credential.
 
+## September 14 portfolio update
+
+GitHub reported this repository as private, with only its owner listed as a
+collaborator. The update adds selected marketplace implementation excerpts,
+a generated video preview frame and project explanations. It excludes the
+original application source tree, full project archives and operational data.
+CV files, application responses and personal contact details are prepared
+separately from this repository.
+
+The local pre-upload review uses Gitleaks 8.30.1 for the working directory and
+all reachable Git history, plus supplemental checks for private data and
+tracked files that match ignore rules. The generated preview frame was
+visually reviewed and contains no text or EXIF metadata chunks. The dated
+review is a check of the upload contents, not a guarantee about future edits
+or retained historical objects.
+
 ## Check future changes
 
 GitHub Actions scans Git history with Gitleaks on pushes and pull requests.

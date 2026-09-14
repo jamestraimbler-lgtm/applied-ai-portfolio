@@ -1,4 +1,6 @@
-# Evidence and verification — 13 September 2026
+# Evidence and verification
+
+Portfolio evidence review: 14 September 2026.
 
 ## Reproduce the checks
 
@@ -8,8 +10,11 @@ Run from the repository root:
 python3 scripts/verify.py
 ```
 
-Local environment: Python 3.14.3 on macOS. Results: 6 quality-gate tests and 19
-CatalogCue tests passed. The report has two passes and one deliberate failure.
+Latest local check: **14 September 2026**, Python 3.14.3 on macOS.
+All **25 tests passed**: 6 quality-gate tests and 19 CatalogCue tests.
+The verifier also passed fixture/exit-code checks, the monitoring walkthrough
+and 158 relative document links. The quality-gate fixture has two passing
+records and one deliberate failing record.
 Monitoring tests mock HTTP and notifications; these checks send no real alerts.
 
 The verifier runs both suites, checks the quality-gate fixture and malformed
@@ -31,8 +36,10 @@ ongoing checks and the limitation concerning retained historical metadata.
 | Claim | Source inspected | Reproducibility for a reviewer with access |
 | --- | --- | --- |
 | Python monitoring and response checks | Included code, examples and tests | Runnable here |
-| Marketplace work in June | June 16–20 commits; source at `1ce28f9` | Case study and excerpt; full source author-held |
-| Marketplace boundaries | Auth context, routers, webhook, evaluator and gateway source | Inspection; no deployed acceptance test |
+| Marketplace work in June | June 16–20 commits; source at `1ce28f9`, reinspected 14 September | Case study and selected access, intake and review excerpts; full source retained separately |
+| Marketplace boundaries | Auth context, listing/admin routers, webhook, evaluator and gateway source | Source inspection; no deployed acceptance test |
+| Veggie Kitchen completed episode | Retained episode-one render inspected with FFprobe; three frames reviewed | Included preview frame; full 117.259-second render retained for walkthrough |
+| Veggie Kitchen workflow | Archived script, image, animation, voice, caption and assembly source; scene outputs | Case study; no current-provider rerun or publication verified |
 | Prediction-market components | Retained Python module definitions | Source study; no canonical version or financial audit |
 | MemeSniper progression | July commits and later README/research evidence | Historical case study; runtime data author-held |
 | Robinhood stop decision | September 8 `docs/BUILD-STATUS.md` and retained campaign account | Historical summary; not rerun here |
@@ -47,4 +54,7 @@ ownership are excluded from public evidence.
 
 The audit did not run private trading projects, contact billing services,
 reconcile wallets, verify customers or test the full marketplace. It did not
-establish unaided coding ability. [Skills map](skills-and-next-steps.md).
+rerun media generation or assess the complete video's audio and timing.
+Source excerpts and retained artifacts support specific implementation claims;
+they do not establish unaided coding ability or professional outcomes.
+[Skills map](skills-and-next-steps.md).

@@ -1,14 +1,15 @@
 # Project register — where each track ends
 
-Portfolio edition: 13 September 2026. This is the authoritative register for
+Portfolio edition: 14 September 2026. This is the authoritative register for
 the showcased scope. These are editorial endpoints, not claims that services
 have been stopped, deployed or changed mode.
 
 | Track | Endpoint | Delivered evidence | Outside this endpoint |
 | --- | --- | --- | --- |
+| AI marketplace | Application prototype documented | Access, transactional intake, escalation and human-decision excerpts; architecture and concrete gaps | Complete sandbox workflow, cancellation, MCP forwarding, webhook replay safety and integration tests |
+| Veggie Kitchen | One finished episode; wider workflow archived | Preview frame and inspected 117-second render metadata; source-stage audit | Episode two, current-provider rerun, distribution package and audience or client outcomes |
 | LLM quality gate | Completed small demo | Included code, examples, exit codes and 6 passing tests | Semantic correctness and real-model evaluation |
 | CatalogCue / StoreWatch | Completed offline demonstration; wider product unfinished | Included engine, six-step runnable walkthrough, expected outcomes and 19 passing tests | User acceptance, hosted operation and customer adoption |
-| AI marketplace | Prototype documented | Source-inspected architecture, excerpt and concrete gaps | Cancellation, MCP forwarding, webhook replay safety and integration testing |
 | Prediction-market automation | Historical source study | Adapter, execution, records and reconciliation modules inspected | Canonical runnable version and reconciled financial outcomes |
 | MemeSniper v1 | Legacy engineering history | Operational and accounting lessons | No trading-product completion or profitability claim |
 | MemeSniper v2 | Research case study | Timing, data coverage and fail-closed evidence rules | No trained-model or live-readiness claim from incomplete populations |
@@ -24,8 +25,10 @@ the claim, a result and a remaining gap. Research can end with “the hypothesis
 did not earn further investment.” A prototype can end with a documented
 interface and a clearly named unfinished path.
 
-The two runnable examples are the strongest directly inspectable evidence.
-Source-only case studies do not inherit their passing tests.
+The Python examples can be run here. The marketplace excerpts can be read
+but are not standalone software. The video frame illustrates a retained
+completed artifact; its full render is available for a walkthrough. These
+different evidence types do not inherit the Python examples' passing tests.
 
 ## Reopening a track
 

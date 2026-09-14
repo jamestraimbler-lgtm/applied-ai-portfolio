@@ -2,12 +2,13 @@
 
 # My AI and software journey
 
-I have used AI tools to explore ideas and build software around them. Many
-involved automation: connect information, make a decision, take an action and
-record what happened. Over time, the difficult question moved from “can this
-run?” to “what does this result actually prove?”
+I have used AI tools to explore ideas across software, backend workflows,
+automation and creative production. The common thread is learning the parts
+an idea needs, connecting them and investigating what happens. Over time, I
+paid more attention to useful milestones and what each result actually proves.
 
-Written on 13 September 2026, this is a retrospective reconstructed from code,
+Written on 13 September and expanded on 14 September 2026, this is a
+retrospective reconstructed from code,
 commits, reports and conversations. It is not a diary written at the time.
 Dates identify surviving evidence, not when I first learned a technology.
 Projects overlapped. AI tools helped build the software and prepare this
@@ -36,7 +37,11 @@ Next.js, TypeScript, tRPC, Prisma and Zod.
 One design choice keeps validation and access rules at the API boundary.
 Another updates a review and its aggregate rating within a database transaction.
 The source also contains Supabase session resolution, Stripe Checkout and
-webhook handling, capability probing and access-key validation.
+webhook handling, capability probing and access-key validation. A closer
+backend review also found transactional listing intake, a submission-review
+workflow, an administrator escalation queue and recorded human decisions.
+Those are useful patterns for other systems that collect information and
+route it to the right next action.
 
 September's audit caught a documentation problem: the old README described
 authentication and Checkout as unwired even though implementations existed.
@@ -49,6 +54,26 @@ Documentation should name the exact remaining step.
 
 **Endpoint:** a documented prototype, without a deployed-service claim.
 [Architecture and unfinished paths](../projects/ai-marketplace/README.md).
+
+## An archived creative experiment: Veggie Kitchen
+
+This project moved into a different domain: turning structured scene scripts
+into an animated episode. It connects generated images, Kling animation,
+ElevenLabs voices, Whisper caption timing and FFmpeg assembly. The retained
+source also separates character and story context from individual scenes.
+
+The archive contains a completed first episode: 117.259 seconds, vertical
+1080 × 1920 video with audio, plus its intermediate scene assets. Episode two
+remains partial. The archive was inspected on 14 September; this is an evidence
+review date, not an established project start date.
+
+**Lesson:** a creative workflow also benefits from explicit stages and saved
+intermediate outputs. A finished export is a concrete milestone even when the
+larger series or tool remains unfinished.
+
+**Endpoint:** one completed episode, a preview and a documented archived
+pipeline. No audience, advertising or commercial result is claimed.
+[Workflow and preview](../projects/veggie-kitchen/README.md).
 
 ## July–September 2026: learning from unreliable results
 
@@ -145,5 +170,13 @@ This journal gives the larger projects context and an endpoint. It also
 distinguishes technologies visible in an artifact from skills I still need
 to demonstrate in a team.
 
-**Next stop:** a defined piece of work with review, users and a clear definition
+## September 14: making the breadth visible
+
+The portfolio now leads with the marketplace's connected backend and adds the
+archived video workflow. This better represents the range of work: application
+infrastructure, creative production, practical automation and research. Each
+case keeps its own evidence and stopping point.
+
+**Next stop:** contribute that breadth to a team, learn the context of its
+work and own a useful first deliverable with feedback and a clear definition
 of done. [Strengths and learning plan](../docs/skills-and-next-steps.md).

@@ -1,15 +1,17 @@
 [Nederlands](README.md) · [English](README.en.md)
 
-# Daan Klein — automatisering bouwen met AI
+# Daan Klein — praktische projecten met AI
 
-Ik ben een autodidactische developer in Nederland en zoek een juniorfunctie
-in automatisering, toegepaste AI, softwaretesten of API-integratie. Ik werk
-met Python en TypeScript, met veel hulp van AI-tools. Mijn volgende stap is
-werken in een team, met code review, duidelijke doelen en echte gebruikers.
+Ik ben een autodidactische bouwer in Nederland en zoek mijn eerste
+professionele functie. Mijn projecten omvatten webapplicaties,
+backendprocessen, automatisering en AI-videoproductie. Ik vind het leuk om
+een onbekend probleem uit te zoeken, de benodigde onderdelen te verbinden
+en een idee concreet te maken.
 
-Hier staan twee kleine Python-voorbeelden die je zelf kunt uitvoeren, plus
-een [logboek van mijn leertraject](journal/README.nl.md). De voorbeelden laten
-zien hoe de software omgaat met onbetrouwbare invoer, fouten en herstel.
+Dit portfolio laat de breedte van dat werk zien en geeft ieder project een
+duidelijk eindpunt. Ik gebruik AI-tools intensief om te bouwen en te leren;
+[mijn werkwijze](docs/how-i-work.nl.md) beschrijft mijn bijdrage en hoe je die
+praktisch kunt beoordelen.
 
 **Talen:** Nederlands, Engels en Frans op conversatieniveau.
 
@@ -17,64 +19,69 @@ zien hoe de software omgaat met onbetrouwbare invoer, fouten en herstel.
 
 | Je wilt… | Bekijk… |
 | --- | --- |
-| In twee minuten weten wie ik ben | [Profiel en bijdrage](docs/application-profile.nl.md) |
-| Een concreet resultaat zien | [CatalogCue: een valse prijsmelding voorkomen en bezorging opnieuw proberen](projects/catalogcue/README.nl.md) |
-| Mijn niveau en leerdoelen inschatten | [Vaardigheden en volgende stappen](docs/skills-and-next-steps.nl.md) |
-| Code beoordelen | [Monitoringcode](projects/catalogcue/storewatch.py), [tests](projects/catalogcue/test_storewatch.py) en [outputcontrole](demos/llm-quality-gate/quality_gate.py) |
-| Begrijpen hoe ik AI gebruik | [Werkwijze en mijn aandeel](docs/how-i-work.nl.md) |
+| Zien hoe ik de onderdelen van een product verbind | [AI-marktplaats: accounts, inzendingen, beoordeling en koppelingen](projects/ai-marketplace/README.md) |
+| Een creatief proces met een afgerond resultaat zien | [Veggie Kitchen: een AI-videoaflevering van 117 seconden](projects/veggie-kitchen/README.md) |
+| Zelf een klein voorbeeld uitvoeren | [CatalogCue: bevestigde wijzigingen en betrouwbare meldingen](projects/catalogcue/README.nl.md) |
+| Mijn achtergrond en sterke punten begrijpen | [Profiel](docs/application-profile.nl.md) en [vaardigheden](docs/skills-and-next-steps.nl.md) |
+| Het bredere verhaal volgen | [Leertraject](journal/README.nl.md) en [projecteindpunten](docs/project-status.md) |
 
-## Uitgelicht: CatalogCue
+## Uitgelicht: AI-marktplaats
 
-Een productpagina laat één keer een lagere prijs zien en daarna weer de oude
-prijs. Meteen een melding sturen zou ruis veroorzaken. De monitor wacht op
-twee overeenkomende waarnemingen. Mislukt het versturen, dan bewaart hij de
-melding om het opnieuw te proberen.
+Een marktplaats heeft meer nodig dan een cataloguspagina. Aanbieders hebben
+accounts en gestructureerde inzendingen nodig. Beoordelaars moeten informatie
+kunnen bekijken en beslissingen vastleggen. Externe gebeurtenissen moeten de
+juiste gegevens bijwerken.
 
-| Situatie in de demo | Resultaat |
-| --- | --- |
-| Prijs 100 → 90 → 100 | Geen wijzigingsmelding |
-| Prijs 90 wordt twee keer waargenomen | Eén bevestigde wijziging |
-| Bezorging mislukt en herstelt | Melding blijft bewaard en wordt later verstuurd |
+Mijn TypeScript-prototype brengt die onderdelen samen:
 
-**Zelf uitvoeren:** vanuit deze map, met Python 3.11 of nieuwer:
+- Sessiecontrole op de server en toegang voor gebruikers, aanbieders en beheerders.
+- Gevalideerde invoer, met gerelateerde gegevens in één databasetransactie.
+- Beoordeling van inzendingen, een wachtrij voor escalaties en vastgelegde menselijke beslissingen.
+- Verwerking van abonnementsgebeurtenissen en koppelingen met externe diensten.
+
+Dit zijn bruikbare bouwstenen voor interne hulpmiddelen en de administratie
+van programma's: registratie, aanmeldingen beoordelen en gegevens gelijk
+houden. Die ervaring is overdraagbaar; ik claim hiermee geen ervaring met het
+organiseren van een deelnemersprogramma. De casus bevat broncodefragmenten
+en benoemt precies wat nog moet gebeuren.
+
+**Eindpunt:** een uitgebreid applicatieprototype, met onaf werk aan facturatie
+en de gateway. [Architectuur, bewijs en beperkingen (Engels)](projects/ai-marketplace/README.md).
+
+## Breedte met concrete eindpunten
+
+| Project | Wat het laat zien | Huidig eindpunt |
+| --- | --- | --- |
+| [AI-marktplaats](projects/ai-marketplace/README.md) | Webapplicatie, toegangsrechten, invoer, menselijke beoordeling en koppelingen | Beschreven prototype; de volledige applicatie staat niet in deze repository |
+| [Veggie Kitchen](projects/veggie-kitchen/README.md) | Gestructureerde scripts, beelden, animatie, stemmen, ondertiteling en montage | Eén afgeronde aflevering bewaard; breder serieproces gearchiveerd en onaf |
+| [CatalogCue](projects/catalogcue/README.nl.md) | Python, HTTP, toestand bewaren, bevestigen en opnieuw versturen | Uitvoerbaar offline voorbeeld; het bredere StoreWatch-product is onaf |
+| [LLM quality gate](demos/llm-quality-gate/README.nl.md) | Vaste controles op tekst en JSONL, CLI en tests | Kleine afgeronde demo; controleert geen feitelijke juistheid |
+| [Beslissystemen](projects/decision-systems/README.md) | Datakwaliteit, onderzoek en lessen uit negatieve resultaten | Onderzoek vastgelegd; geen bewezen winstgevende strategie |
+| [Voorspellingsmarkten](projects/prediction-market-automation/README.md) | API-adapters, orderstappen en reconciliatie | Historische bronstudie |
+
+Het [projectregister (Engels)](docs/project-status.md) beschrijft ieder eindpunt.
+Sommige voorbeelden kun je hier uitvoeren; grotere projecten zijn uitgewerkt
+als casus.
+
+## De voorbeelden uitvoeren
+
+Vanuit deze map, met Python 3.11 of nieuwer:
 
 ```bash
 python3 projects/catalogcue/demo.py
 python3 scripts/verify.py
 ```
 
-De demo gebruikt de echte monitoringcode met gesimuleerde pagina's en
-bezorgresultaten. Je hebt geen API-account nodig. Het is een uitvoerbaar
-voorbeeld; het bredere product is nog niet af. [Uitleg, code en beperkingen](projects/catalogcue/README.nl.md).
+CatalogCue negeert een tijdelijke prijsdaling, bevestigt een herhaalde
+wijziging en bewaart een mislukte melding voor een nieuwe poging. De demo
+gebruikt de echte monitoringcode met gesimuleerde pagina's en bezorgresultaten.
+Je hebt geen API-account nodig.
 
-## Projecten en eindpunten
+De verificatie voert **25 tests** uit voor de twee Python-voorbeelden en
+controleert demo-uitkomsten, exitcodes en lokale documentatielinks.
+[Verificatie en grenzen van het bewijs (Engels)](docs/evidence.md).
 
-| Project | Wat je kunt bekijken | Huidige status |
-| --- | --- | --- |
-| [CatalogCue](projects/catalogcue/README.nl.md) | Python, HTTP, toestand bewaren, bevestigen en opnieuw proberen | Uitvoerbaar voorbeeld; breder product onaf |
-| [LLM quality gate](demos/llm-quality-gate/README.nl.md) | Vaste controles op tekst en JSONL, CLI en tests | Kleine afgeronde demo; controleert geen feitelijke juistheid |
-| [AI-marktplaats — Engelse casus](projects/ai-marketplace/README.md) | TypeScript, validatie, authenticatie, betalingen en MCP | Prototype beschreven; concrete integratiestappen ontbreken |
-| [Beslissystemen — Engelse casus](projects/decision-systems/README.md) | Datakwaliteit, onderzoek en lessen uit negatieve resultaten | Onderzoek vastgelegd; geen bewezen winstgevende strategie |
-| [Voorspellingsmarkten — Engelse casus](projects/prediction-market-automation/README.md) | API-adapters, orderstappen en reconciliatie | Historische bronstudie |
-
-Het [projectregister (Engels)](docs/project-status.md) beschrijft precies waar
-ieder project stopt. De [Nederlandse samenvatting van mijn leertraject](journal/README.nl.md)
-verbindt de projecten met elkaar; het volledige logboek is in het Engels.
-
-## Controleerbaar werk
-
-De twee voorbeelden hebben samen **25 tests**: 19 voor monitoring en 6 voor
-de quality gate. De verificatie controleert ook de demo-uitkomsten, exitcodes
-en lokale documentatielinks. Netwerkverkeer en meldingen zijn gesimuleerd.
-
-[Geslaagde GitHub-controles van 13 september 2026](https://github.com/jamestraimbler-lgtm/applied-ai-portfolio/actions/runs/34756299769)
-op Python 3.11, 3.12 en 3.13. [Bewijs en grenzen (Engels)](docs/evidence.md).
-
-AI heeft veel bijgedragen aan de code, tests en teksten. Mijn begrip kun je
-beoordelen door samen één voorbeeld door te nemen en een kleine wijziging
-te bespreken. [Meer over mijn werkwijze](docs/how-i-work.nl.md).
-
-De introductie, het profiel, de leerdoelen en de twee demonstraties zijn in
-het Nederlands en Engels beschikbaar. Broncode en uitgebreide technische
-casussen blijven in het Engels. Toegang tot deze repository wordt apart
-geregeld; een link geeft op zichzelf geen toegang tot een privérepository.
+De introductie, het profiel, de werkwijze, leerdoelen en Python-demo's zijn
+beschikbaar in het Nederlands en Engels. Uitgebreide technische casussen zijn
+in het Engels. Toegang tot deze repository wordt apart geregeld; een link
+geeft op zichzelf geen toegang tot een privérepository.
