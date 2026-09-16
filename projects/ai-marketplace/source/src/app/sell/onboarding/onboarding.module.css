@@ -1,0 +1,190 @@
+.shell {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 0;
+  margin-bottom: 1rem;
+}
+.wordmark {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.wordmark .bk {
+  color: var(--accent);
+}
+
+/* Stepper */
+.stepper {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+.step {
+  flex: 1;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--line-strong);
+  transition: background 0.25s;
+}
+.step.done {
+  background: var(--accent);
+}
+.step.active {
+  background: var(--accent);
+  opacity: 0.55;
+}
+
+.card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 0.4rem;
+}
+.card h2 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.4rem;
+}
+.lead {
+  color: var(--muted);
+  margin: 0 0 1.5rem;
+  font-size: 0.92rem;
+}
+
+.row2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+@media (max-width: 560px) {
+  .row2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.handleField {
+  display: flex;
+  align-items: stretch;
+}
+.handlePrefix {
+  display: flex;
+  align-items: center;
+  padding: 0 0.7rem;
+  background: var(--paper-tint);
+  border: 1px solid var(--line-strong);
+  border-right: none;
+  border-radius: var(--radius) 0 0 var(--radius);
+  color: var(--muted);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+.handleField input {
+  border-radius: 0 var(--radius) var(--radius) 0 !important;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+.actions .spacer {
+  flex: 1;
+}
+
+/* Pricing model choice cards */
+.choices {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.choice {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 1rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+.choice:hover {
+  border-color: var(--accent);
+}
+.choice.selected {
+  border-color: var(--accent);
+  background: var(--accent-tint);
+}
+.choice input {
+  margin-top: 0.2rem;
+}
+.choice .ctitle {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.choice .cdesc {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* Review step */
+.reviewBlock {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+  margin-bottom: 0.75rem;
+}
+.reviewBlock h3 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin: 0 0 0.6rem;
+}
+.kv {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.9rem;
+  padding: 0.2rem 0;
+}
+.kv .k {
+  color: var(--muted);
+}
+.kv .v {
+  text-align: right;
+  font-weight: 500;
+}
+
+.successWrap {
+  text-align: center;
+  padding: 1rem 0;
+}
+.successWrap .big {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--accent-tint);
+  color: var(--accent);
+  display: grid;
+  place-items: center;
+  margin: 0 auto 1rem;
+  font-size: 1.5rem;
+}

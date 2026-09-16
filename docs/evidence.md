@@ -1,6 +1,8 @@
 # Evidence and verification
 
-Portfolio evidence review: 14 September 2026.
+Historical evidence review: 14 September 2026. The
+[16 September verification and source release](verification-2026-09-16.md)
+supersedes the source-availability and latest-check statements below.
 
 ## Reproduce the checks
 

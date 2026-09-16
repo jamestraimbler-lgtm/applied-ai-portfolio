@@ -18,6 +18,9 @@ logs/
 .coverage
 htmlcov/
 node_modules/
+*.tsbuildinfo
+briefings/
+REGIME_ALERT.txt
 .next/
 dist/
 build/

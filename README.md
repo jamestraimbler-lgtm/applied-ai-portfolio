@@ -1,92 +1,58 @@
-[Nederlands](README.md) · [English](README.en.md)
+# Daan Klein — software, automation and applied AI
 
-# Daan Klein — praktische projecten met AI
+Self-taught builder in Delft, Netherlands, seeking my first professional role.
+I build with Python, TypeScript and substantial AI assistance: web applications,
+API integrations, research tools and creative workflows. I take responsibility
+for the project direction, investigate failures and check what the result
+actually does. [How I work](docs/how-i-work.md).
 
-Ik ben een autodidactische bouwer in Nederland en zoek mijn eerste
-professionele functie. Mijn projecten omvatten webapplicaties,
-backendprocessen, automatisering en AI-videoproductie. Ik vind het leuk om
-een onbekend probleem uit te zoeken, de benodigde onderdelen te verbinden
-en een idee concreet te maken.
+**Open to:** junior backend, integration, automation and technical generalist roles.
+**Languages:** Dutch and English; conversational French.
+**Contact:** [daan@superposition.life](mailto:daan@superposition.life) ·
+[LinkedIn](https://www.linkedin.com/in/daan-klein-1b20a5437) ·
+[Background](docs/application-profile.md) · [Nederlands](README.nl.md)
 
-Dit portfolio laat de breedte van dat werk zien en geeft ieder project een
-duidelijk eindpunt. Ik gebruik AI-tools intensief om te bouwen en te leren;
-[mijn werkwijze](docs/how-i-work.nl.md) beschrijft mijn bijdrage en hoe je die
-praktisch kunt beoordelen.
+## Projects and the code behind them
 
-**Talen:** Nederlands, Engels en Frans op conversatieniveau.
+| Project | What I built | Inspect or run | Status |
+| --- | --- | --- | --- |
+| **[AImazon](projects/ai-marketplace/README.md)** | Marketplace for discovering and listing AI agents: accounts, seller workflows, database transactions, review queues and billing integration | [Application source](projects/ai-marketplace/source), [API routers](projects/ai-marketplace/source/src/server/api/routers), [data model](projects/ai-marketplace/source/prisma/schema.prisma) | Substantial prototype; typechecked. Billing and gateway work remain |
+| **[Brain](projects/brain/README.md)** | Forecasting research tooling, source adapters, recorded hypotheses, measurement and statistical controls | [50 Python source files](projects/brain/source), [synthetic validation](projects/brain/source/validation.py) | Archived research; offline statistical walkthrough verified |
+| **[CatalogCue](projects/catalogcue/README.md)** | Website-change confirmation, persistent state and notification retries | [Engine](projects/catalogcue/storewatch.py), [offline demo](projects/catalogcue/demo.py), [19 tests](projects/catalogcue/test_storewatch.py) | Runnable sample from unfinished StoreWatch work |
+| **[Mac Agent](projects/mac-agent/README.md)** | SQLite memory, project tracking, process/log inspection and daily briefing generation | [Four source modules](projects/mac-agent/source), [offline memory demo](projects/mac-agent/demo.py) | Archived tooling; memory walkthrough verified |
+| **[Veggie Kitchen](projects/veggie-kitchen/README.md)** | Scripts, images, animation, voices, captions and assembly for a 117-second video | [Pipeline source](projects/veggie-kitchen/source), [preview](projects/veggie-kitchen/media/episode-1-preview.png) | One finished episode; wider pipeline archived |
+| **[LLM quality gate](demos/llm-quality-gate/README.md)** | Explicit checks for text and JSONL outputs | [Code and six tests](demos/llm-quality-gate) | Small completed learning demo |
 
-**Contact:** [daan@superposition.life](mailto:daan@superposition.life)
+For a quick engineering review, start with AImazon's API and data model, then
+run CatalogCue. Brain shows a larger research track; Veggie Kitchen shows a
+different kind of workflow and a completed creative artifact.
 
-## Begin hier
+## Run an example in a minute
 
-| Je wilt… | Bekijk… |
-| --- | --- |
-| Zien hoe ik de onderdelen van een product verbind | [AImazon: accounts, inzendingen, beoordeling en koppelingen](projects/ai-marketplace/README.md) |
-| Een creatief proces met een afgerond resultaat zien | [Veggie Kitchen: een AI-videoaflevering van 117 seconden](projects/veggie-kitchen/README.md) |
-| Zelf een klein voorbeeld uitvoeren | [CatalogCue: bevestigde wijzigingen en betrouwbare meldingen](projects/catalogcue/README.nl.md) |
-| Mijn achtergrond en sterke punten begrijpen | [Profiel](docs/application-profile.nl.md) en [vaardigheden](docs/skills-and-next-steps.nl.md) |
-| Het bredere verhaal volgen | [Leertraject](journal/README.nl.md) en [projecteindpunten](docs/project-status.md) |
-
-## Uitgelicht: AImazon
-
-AImazon is mijn concept voor een marktplaats waar particulieren en bedrijven
-AI-agents kunnen vinden en makers hun agents kunnen aanbieden. Ik zie het als
-een "Amazon voor AI". Het prototype verkent het platform achter dat idee,
-met onder meer vermeldingen voor AI-tools en MCP-servers.
-
-Daar is meer voor nodig dan een cataloguspagina. Aanbieders hebben
-accounts en gestructureerde inzendingen nodig. Beoordelaars moeten informatie
-kunnen bekijken en beslissingen vastleggen. Externe gebeurtenissen moeten de
-juiste gegevens bijwerken.
-
-Mijn TypeScript-prototype brengt die onderdelen samen:
-
-- Sessiecontrole op de server en toegang voor gebruikers, aanbieders en beheerders.
-- Gevalideerde invoer, met gerelateerde gegevens in één databasetransactie.
-- Beoordeling van inzendingen, een wachtrij voor escalaties en vastgelegde menselijke beslissingen.
-- Verwerking van abonnementsgebeurtenissen en koppelingen met externe diensten.
-
-Bij het bouwen van dit prototype heb ik gebruikersprocessen, databasegegevens,
-toegangsrechten en externe diensten met elkaar verbonden. Die bouwstenen zijn
-ook bruikbaar voor andere webproducten, bedrijfsautomatisering en interne
-hulpmiddelen. De casus bevat broncodefragmenten en benoemt wat nog moet gebeuren.
-
-**Eindpunt:** een uitgebreid applicatieprototype, met onaf werk aan facturatie
-en de gateway. [Architectuur, bewijs en beperkingen (Engels)](projects/ai-marketplace/README.md).
-
-## Breedte met concrete eindpunten
-
-| Project | Wat het laat zien | Huidig eindpunt |
-| --- | --- | --- |
-| [AImazon](projects/ai-marketplace/README.md) | Webapplicatie, toegangsrechten, invoer, menselijke beoordeling en koppelingen | Beschreven prototype; de volledige applicatie staat niet in deze repository |
-| [Veggie Kitchen](projects/veggie-kitchen/README.md) | Gestructureerde scripts, beelden, animatie, stemmen, ondertiteling en montage | Eén afgeronde aflevering bewaard; breder serieproces gearchiveerd en onaf |
-| [CatalogCue](projects/catalogcue/README.nl.md) | Python, HTTP, toestand bewaren, bevestigen en opnieuw versturen | Uitvoerbaar offline voorbeeld; het bredere StoreWatch-product is onaf |
-| [LLM quality gate](demos/llm-quality-gate/README.nl.md) | Vaste controles op tekst en JSONL, CLI en tests | Kleine afgeronde demo; controleert geen feitelijke juistheid |
-| [Beslissystemen](projects/decision-systems/README.md) | Datakwaliteit, onderzoek en lessen uit negatieve resultaten | Onderzoek vastgelegd; geen bewezen winstgevende strategie |
-| [Voorspellingsmarkten](projects/prediction-market-automation/README.md) | API-adapters, orderstappen en reconciliatie | Historische bronstudie |
-
-Het [projectregister (Engels)](docs/project-status.md) beschrijft ieder eindpunt.
-Sommige voorbeelden kun je hier uitvoeren; grotere projecten zijn uitgewerkt
-als casus.
-
-## De voorbeelden uitvoeren
-
-Vanuit deze map, met Python 3.11 of nieuwer:
+Clone this repository, then from its root with Python 3.11 or newer:
 
 ```bash
 python3 projects/catalogcue/demo.py
+python3 projects/mac-agent/demo.py
 python3 scripts/verify.py
 ```
 
-CatalogCue negeert een tijdelijke prijsdaling, bevestigt een herhaalde
-wijziging en bewaart een mislukte melding voor een nieuwe poging. De demo
-gebruikt de echte monitoringcode met gesimuleerde pagina's en bezorgresultaten.
-Je hebt geen API-account nodig.
+The first two demonstrations are offline and need no credentials. The verifier
+checks the existing 25 Python tests, demo outcomes, archived Python syntax and
+local documentation links. Brain's NumPy demonstration and AImazon's TypeScript
+checks have separate setup instructions in their project pages.
 
-De verificatie voert **25 tests** uit voor de twee Python-voorbeelden en
-controleert demo-uitkomsten, exitcodes en lokale documentatielinks.
-[Verificatie en grenzen van het bewijs (Engels)](docs/evidence.md).
+## Evidence, scope and learning
 
-De introductie, het profiel, de werkwijze, leerdoelen en Python-demo's zijn
-beschikbaar in het Nederlands en Engels. Uitgebreide technische casussen zijn
-in het Engels.
+These are personal projects built with AI assistance. A source snapshot is not
+a deployed product, and a passing typecheck is not an end-to-end test.
+Each project page states what exists, how to inspect it and what remains.
+[Current verification](docs/verification-2026-09-16.md) records the checks performed.
+
+[Project register](docs/project-status.md) · [Learning journal](journal/README.md) ·
+[Skills and next steps](docs/skills-and-next-steps.md) ·
+[Source publication notes](docs/source-publication.md)
+
+Earlier [decision-system research](projects/decision-systems/README.md) and
+[prediction-market automation](projects/prediction-market-automation/README.md)
+remain documented as engineering history. No profitable strategy is claimed.

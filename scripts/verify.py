@@ -53,6 +53,18 @@ def main() -> int:
             raise RuntimeError("CatalogCue walkthrough differs from its expected outcomes")
         print("PASS: CatalogCue confirmation and notification retry walkthrough")
 
+        memory_demo = run_python(["projects/mac-agent/demo.py"])
+        if "[projects] demo-project:" not in memory_demo or "Not found: demo-project" not in memory_demo:
+            raise RuntimeError("Memory walkthrough did not demonstrate search and deletion")
+        print("PASS: Mac Agent isolated memory walkthrough")
+
+        source_count = 0
+        for folder in ["brain", "mac-agent", "veggie-kitchen"]:
+            for source in (ROOT / "projects" / folder / "source").rglob("*.py"):
+                compile(source.read_text(encoding="utf-8"), str(source), "exec")
+                source_count += 1
+        print(f"PASS: {source_count} archived Python modules parse (not imported or executed)")
+
         checked = 0
         for document in sorted(ROOT.rglob("*.md")):
             if any(part in {".git", ".venv", "venv", "node_modules"} for part in document.relative_to(ROOT).parts):
@@ -67,7 +79,7 @@ def main() -> int:
                     raise RuntimeError(f"Invalid local link in {document.relative_to(ROOT)}: {target}")
                 checked += 1
         print(f"PASS: {checked} relative document links (fragment anchors not checked)")
-    except (RuntimeError, OSError, ValueError, KeyError, subprocess.TimeoutExpired) as exc:
+    except (RuntimeError, OSError, ValueError, KeyError, SyntaxError, subprocess.TimeoutExpired) as exc:
         print(f"FAIL: {exc}", file=sys.stderr)
         return 1
     print("Portfolio verification passed.")

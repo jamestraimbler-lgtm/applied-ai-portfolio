@@ -7,8 +7,8 @@ the idea: bringing discovery and the supporting platform into one place.
 **Endpoint: documented application prototype.** The project connects accounts,
 structured submissions, review decisions and external service events. It is
 my strongest case study for the breadth involved in building a practical
-application. This repository contains the case study and short source excerpts;
-the full application remains separate.
+application. This repository now includes the [application source](source/README.md):
+UI, API routers, database schema and migrations, and build configuration.
 
 Original source at commit `1ce28f9` was inspected on 13–14 September 2026.
 Retained commits span 16–20 June 2026. The implementation was substantially
@@ -61,6 +61,11 @@ This describes the inspected implementation. The complete user journey was
 not executed in this portfolio audit.
 
 ## Source details
+
+**Start with the [application source and setup guide](source/README.md).**
+Prisma generation, TypeScript checking and the Next.js build were rerun on
+16 September. See the [current verification record](../../docs/verification-2026-09-16.md).
+The old reading excerpt below remains as a shorter introduction.
 
 [Read the selected backend implementation](backend-excerpts.ts): access
 middleware, transactional listing creation, the escalation queue and human

@@ -7,7 +7,8 @@ work: learning creative tools and integrating them into a repeatable process.
 
 The archive was inspected on 14 September 2026. The completed render and its
 source assets are retained separately and can be shown in a walkthrough.
-This repository contains a preview frame and the case study.
+This repository contains a preview frame, the case study and the
+[archived pipeline source](source/README.md).
 
 ## A concrete result
 

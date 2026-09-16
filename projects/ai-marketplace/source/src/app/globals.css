@@ -1,0 +1,116 @@
+:root {
+  /* Warm + crisp palette — trustworthy and comfortable without being cold. */
+  --ink: #2C2A26;
+  --ink-soft: #4A4640;
+  --paper: #FFFFFF;
+  --paper-tint: #F7F4EF;
+  --line: #ECE7E0;
+  --line-strong: #DDD6CC;
+  --accent: #5E54C8;
+  --accent-hover: #4F46AE;
+  --accent-tint: #EEEBFE;
+  --danger: #c0362c;
+  --danger-tint: #fbecea;
+  --success: #0f7a5a;
+  --muted: #9A938C;
+
+  --surface-raised: #FFFDFA;
+  --radius: 11px;
+  --radius-lg: 14px;
+  --radius-pill: 999px;
+  --shadow: 0 1px 2px rgba(44, 42, 38, 0.04), 0 6px 20px rgba(44, 42, 38, 0.07);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--paper-tint);
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.55;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* --- Form primitives, reused across auth + onboarding --- */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+.field label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+.field input,
+.field textarea,
+.field select {
+  font: inherit;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--paper);
+  color: var(--ink);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-tint);
+}
+
+.btn {
+  font: inherit;
+  font-weight: 500;
+  padding: 0.7rem 1.1rem;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.btn:hover {
+  background: var(--accent-hover);
+}
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--ink-soft);
+  border: 1px solid var(--line-strong);
+}
+.btn-ghost:hover {
+  background: var(--paper);
+}
+
+.form-error {
+  background: var(--danger-tint);
+  color: var(--danger);
+  border-radius: var(--radius);
+  padding: 0.6rem 0.75rem;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+.form-note {
+  color: var(--muted);
+  font-size: 0.875rem;
+}

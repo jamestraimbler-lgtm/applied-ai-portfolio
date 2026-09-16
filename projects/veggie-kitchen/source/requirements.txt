@@ -1,0 +1,17 @@
+# Core dependencies
+openai>=1.50.0
+requests>=2.31.0
+fal-client>=0.4.0
+
+# YouTube upload & comment bot
+google-api-python-client>=2.100.0
+google-auth-oauthlib>=1.1.0
+google-auth-httplib2>=0.2.0
+
+# Whisper (for caption sync)
+# Install separately: pip install openai-whisper
+# Or: brew install openai-whisper
+
+# System requirements (install via brew/apt):
+# - ffmpeg (video assembly)
+# - ffprobe (duration detection)

@@ -1,0 +1,471 @@
+// ============================================================================
+//  AI Marketplace — Data Model
+// ----------------------------------------------------------------------------
+//  Listing unit: an MCP server (a connectable agent/tool bundle).
+//  Marketplace mechanics: sellers list, buyers subscribe, Stripe Connect
+//  handles payouts + the platform's cut.
+//
+//  Design rules followed here:
+//   - Money is NEVER a float. Stored as integer minor units (cents) + currency.
+//   - Every externally-visible row has a stable public `slug` or `id`, never
+//     leaking sequential DB ids in URLs.
+//   - Soft-delete via `deletedAt` on anything a user creates (you can't get
+//     trust/reviews back if you hard-delete a seller's history).
+//   - Enums for anything with a fixed set of states, so the DB enforces them.
+//   - Audit timestamps everywhere.
+// ============================================================================
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// ===========================================================================
+//  IDENTITY & ACCOUNTS
+// ===========================================================================
+
+// A single human account. Auth itself lives in Clerk/Supabase; we store the
+// external id and mirror the minimum we need. A user can be BOTH a buyer and a
+// seller — role is per-action, not a fixed identity, so we don't model it as a
+// single enum on the user.
+model User {
+  id          String   @id @default(cuid())
+  // The id from the external auth provider (Clerk/Supabase). Source of truth
+  // for authentication; our `id` is the source of truth for relations.
+  authId      String   @unique
+  email       String   @unique
+  displayName String?
+  avatarUrl   String?
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+
+  // A user who sells has exactly one SellerProfile (their storefront identity).
+  sellerProfile SellerProfile?
+
+  // Things this user does as a buyer.
+  subscriptions Subscription[]
+  reviews       Review[]
+  // Platform-level role flags (admin/moderation). Kept separate from the
+  // buyer/seller distinction because it's about *platform* permissions.
+  isAdmin       Boolean        @default(false)
+
+  @@index([deletedAt])
+}
+
+// A seller's public storefront identity + their Stripe Connect linkage.
+// Separated from User so a buyer-only account carries none of this weight,
+// and so storefront data (bio, payout status) has a clean home.
+model SellerProfile {
+  id     String @id @default(cuid())
+  userId String @unique
+  user   User   @relation(fields: [userId], references: [id])
+
+  // Public storefront fields
+  handle      String  @unique // e.g. "acme-ai" — used in URLs: /sellers/acme-ai
+  displayName String
+  bio         String?
+  websiteUrl  String?
+
+  // --- Onboarding ---
+  // Where the seller is in the onboarding process. They become ACTIVE on
+  // completing onboarding; the real quality gate is per-LISTING (see
+  // ListingReview), not on the seller account. SUSPENDED lets an admin block a
+  // seller wholesale if abuse shows up later.
+  status SellerStatus @default(ONBOARDING)
+  // Their stated intent during onboarding for how they'll charge. This is a
+  // declaration that primes the Stripe step and informs review — the binding
+  // prices live on each Listing's PricingPlans, not here.
+  intendedPricingModel PricingModel?
+
+  // --- Stripe Connect ---
+  // The connected account id (acct_...). Null until they start onboarding.
+  stripeAccountId String? @unique
+  // Mirror of Stripe's onboarding state so we don't hit their API on every
+  // page load. Source of truth is still Stripe; we refresh via webhook.
+  payoutStatus    PayoutStatus @default(NOT_STARTED)
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+
+  listings Listing[]
+
+  @@index([status])
+  @@index([payoutStatus])
+  @@index([deletedAt])
+}
+
+enum SellerStatus {
+  ONBOARDING // mid onboarding flow, profile not yet complete
+  ACTIVE // completed onboarding; can create + submit listings
+  SUSPENDED // blocked by admin (account-level), distinct from listing review
+}
+
+enum PayoutStatus {
+  NOT_STARTED // hasn't begun Stripe onboarding
+  PENDING // onboarding started, Stripe still verifying
+  ACTIVE // can receive payouts
+  RESTRICTED // Stripe flagged the account; payouts paused
+}
+
+// ===========================================================================
+//  THE LISTING (an MCP server)
+// ===========================================================================
+
+// A Listing is the product. One MCP server = one Listing. The actual technical
+// spec (transport, tools exposed, auth) lives in McpSpec, kept 1:1 so the
+// Listing row stays about *commerce/discovery* and the spec stays about *tech*.
+model Listing {
+  id     String @id @default(cuid())
+  slug   String @unique // /listings/some-cool-agent
+  seller SellerProfile @relation(fields: [sellerId], references: [id])
+  sellerId String
+
+  name             String
+  // Short one-liner for cards/search results.
+  tagline          String
+  // Full markdown description for the detail page.
+  description      String
+  iconUrl          String?
+
+  status     ListingStatus @default(DRAFT)
+  // Admin-curated: at most one listing should be featured at a time.
+  isFeatured Boolean @default(false)
+  // Denormalized aggregates so the catalog doesn't recompute on every render.
+  // Kept correct by the same transaction that writes a Review / Subscription.
+  ratingAvg      Float @default(0) // 0.0–5.0
+  ratingCount    Int   @default(0)
+  activeSubCount Int   @default(0)
+
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  publishedAt DateTime?
+  deletedAt   DateTime?
+
+  // 1:1 technical spec
+  mcpSpec McpSpec?
+
+  // Commerce
+  plans         PricingPlan[]
+  subscriptions Subscription[]
+  reviews       Review[]
+
+  // Moderation: every submission for review creates a ListingReview record
+  // (the agent's verdict + reasoning). Newest one reflects current state.
+  listingReviews ListingReview[]
+
+  // Discovery
+  categories CategoriesOnListings[]
+
+  @@index([status])
+  @@index([sellerId])
+  @@index([deletedAt])
+  // Common catalog sort: top-rated published listings.
+  @@index([status, ratingAvg])
+}
+
+enum ListingStatus {
+  DRAFT // seller still editing, not public
+  IN_REVIEW // submitted, awaiting an approval decision (trust gate)
+  PUBLISHED // live in the catalog
+  REJECTED // review declined it; seller can revise and resubmit
+  SUSPENDED // pulled by admin (policy/safety)
+  ARCHIVED // seller retired it; existing subs may continue
+}
+
+// ===========================================================================
+//  MODERATION / TRUST: the approval review record
+// ===========================================================================
+
+// One row per time a listing is submitted for review. It captures the approval
+// agent's decision, its reasoning, and any risk flags — an audit trail of *why*
+// something was approved/rejected, which is itself a trust feature. A listing
+// can have several over its life (resubmit after a rejection -> new row).
+//
+// The agent auto-approves/rejects clear cases and ESCALATES unclear ones; an
+// escalated row waits for a human, recorded via reviewedBy = HUMAN on the
+// resolving decision.
+model ListingReview {
+  id        String  @id @default(cuid())
+  listing   Listing @relation(fields: [listingId], references: [id])
+  listingId String
+
+  // The decision. ESCALATED means "agent declined to auto-decide" and the row
+  // is pending a human verdict.
+  verdict   ReviewVerdict @default(PENDING)
+  // Who/what produced the current verdict.
+  reviewedBy ReviewedBy   @default(AGENT)
+
+  // The agent's natural-language reasoning for the decision (shown to the
+  // seller on rejection, and to a human reviewer on escalation).
+  reasoning String?
+  // Structured risk signals the agent flagged, e.g.
+  //   [{ "code": "MISLEADING_CLAIM", "detail": "...", "severity": "high" }]
+  // Stored as JSON because the set of signals is open-ended; validated by Zod
+  // before it's written.
+  riskFlags Json?
+  // A 0–100 confidence/risk score the agent assigns, for triage + analytics.
+  riskScore Int?
+
+  // The model identifier that produced the verdict (e.g. "claude-..."), for
+  // auditability as models change over time.
+  modelId String?
+
+  // Structured result from the MCP capability prober (reachable, probed tools,
+  // mismatches). Validated by Zod before writing; null if no probe was run.
+  probeResult Json?
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  // When a human resolved an escalation (null if agent-decided or still open).
+  resolvedAt DateTime?
+
+  @@index([listingId])
+  @@index([verdict])
+  // Triage queue: escalations waiting on a human, oldest first.
+  @@index([verdict, createdAt])
+}
+
+enum ReviewVerdict {
+  PENDING // created, agent hasn't returned yet
+  APPROVED // cleared -> listing goes PUBLISHED
+  REJECTED // declined -> listing goes REJECTED, seller may revise
+  ESCALATED // agent unsure -> waiting on a human decision
+}
+
+enum ReviewedBy {
+  AGENT // the automated approval agent
+  HUMAN // a platform admin/moderator
+}
+
+// The technical contract of the MCP server. This is what makes "one-click
+// connect" possible — the buyer's client needs exactly this to wire it up.
+model McpSpec {
+  id        String  @id @default(cuid())
+  listingId String  @unique
+  listing   Listing @relation(fields: [listingId], references: [id])
+
+  // How the server is reached. MCP currently runs over a few transports;
+  // we model it explicitly so clients know how to connect.
+  transport   McpTransport
+  // For remote servers: the base URL (https://...). Null for stdio.
+  endpointUrl String?
+  // How a buyer authenticates to the server once subscribed.
+  authType    McpAuthType
+
+  // The capabilities the server advertises. Stored as structured JSON because
+  // the tool list is variable-shape and we want to display/search it without a
+  // rigid sub-table per capability type. Shape is validated by Zod at the app
+  // layer before it ever lands here.
+  // e.g. { "tools": [{ "name": "search", "description": "..." }], ... }
+  capabilities Json
+
+  // Protocol version the server implements (e.g. "2025-06-18"), for client
+  // compatibility checks.
+  protocolVersion String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum McpTransport {
+  STDIO // local process (less common for a marketplace, but valid)
+  SSE // server-sent events (legacy remote)
+  STREAMABLE_HTTP // current remote standard
+}
+
+enum McpAuthType {
+  NONE // open server
+  API_KEY // buyer gets a key on subscribe
+  OAUTH // OAuth flow against the server
+}
+
+// ===========================================================================
+//  PRICING & MONEY
+// ===========================================================================
+
+// A Listing can offer multiple plans (Free / Pro / per-call). We keep money as
+// integer minor units + a currency code. Never floats.
+model PricingPlan {
+  id        String  @id @default(cuid())
+  listingId String
+  listing   Listing @relation(fields: [listingId], references: [id])
+
+  name  String // "Free", "Pro", "Team"
+  model PricingModel
+
+  // Recurring price in minor units (e.g. 1999 = $19.99). Null for FREE/USAGE.
+  priceCents Int?
+  currency   String  @default("usd")
+  interval   BillingInterval? // null for one-time / usage
+
+  // For USAGE pricing: price per unit-call in minor units, and what a "unit"
+  // is. Null for FLAT_RATE/FREE.
+  unitPriceCents Int?
+  unitLabel      String? // "per 1k tokens", "per call"
+
+  // Mirror of the Stripe Price object so checkout doesn't re-create prices.
+  stripePriceId String? @unique
+
+  // Sellers can retire a plan without deleting it (existing subs keep it).
+  isActive  Boolean   @default(true)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  subscriptions Subscription[]
+
+  @@index([listingId])
+}
+
+enum PricingModel {
+  FREE
+  FLAT_RATE // fixed recurring (the interval field applies)
+  USAGE // metered per-call (unitPriceCents applies)
+}
+
+enum BillingInterval {
+  MONTH
+  YEAR
+}
+
+// ===========================================================================
+//  SUBSCRIPTIONS (the buyer↔listing relationship + billing state)
+// ===========================================================================
+
+// One row per (buyer, plan) active relationship. This is the join that says
+// "this buyer has access to this MCP server under these terms," and it mirrors
+// the Stripe Subscription for billing truth.
+model Subscription {
+  id     String @id @default(cuid())
+  buyer  User   @relation(fields: [buyerId], references: [id])
+  buyerId String
+
+  listing   Listing     @relation(fields: [listingId], references: [id])
+  listingId String
+  plan      PricingPlan @relation(fields: [planId], references: [id])
+  planId    String
+
+  status SubscriptionStatus @default(INCOMPLETE)
+
+  // Mirror of Stripe. Source of truth for billing is Stripe; we refresh via
+  // webhook. We store these so the app can gate access without an API call.
+  stripeSubscriptionId String?   @unique
+  currentPeriodEnd     DateTime?
+  cancelAtPeriodEnd    Boolean   @default(false)
+
+  // The credential the buyer uses to actually call the MCP server (if the
+  // server uses API_KEY auth). Encrypted at rest — we store a reference/cipher,
+  // never plaintext. Null for NONE/OAUTH.
+  accessKeyCipher String?
+  // SHA-256 hash of the plaintext key (hex). Deterministic + one-way, so we
+  // can look up a subscription by a presented key without storing plaintext.
+  accessKeyHash   String?
+
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  canceledAt DateTime?
+
+  // Usage events for metered billing live here.
+  usageEvents UsageEvent[]
+
+  // A buyer can only have one *active* subscription per listing. Enforced
+  // partially here; full "one active" rule is enforced at the app layer since
+  // canceled rows for the same pair are allowed to coexist historically.
+  @@index([buyerId])
+  @@index([listingId])
+  @@index([accessKeyHash])
+  @@index([status])
+}
+
+enum SubscriptionStatus {
+  INCOMPLETE // created, first payment not yet confirmed
+  ACTIVE // paid, access granted
+  PAST_DUE // payment failed, grace period
+  CANCELED // ended
+  PAUSED
+}
+
+// Metered usage for USAGE-priced plans. One row per reported usage batch.
+// We aggregate these and report to Stripe for billing. Kept append-only.
+model UsageEvent {
+  id             String       @id @default(cuid())
+  subscription   Subscription @relation(fields: [subscriptionId], references: [id])
+  subscriptionId String
+
+  // How many billable units this event represents.
+  quantity Int
+  // When the usage actually happened (may differ from row creation).
+  occurredAt DateTime @default(now())
+  // Whether we've already reported this to Stripe (idempotency for billing).
+  reportedToStripe Boolean @default(false)
+
+  createdAt DateTime @default(now())
+
+  @@index([subscriptionId, reportedToStripe])
+  @@index([occurredAt])
+}
+
+// ===========================================================================
+//  TRUST: REVIEWS
+// ===========================================================================
+
+// A review is gated: only a user who has (or had) a subscription to the listing
+// can write one. That rule lives at the app layer, but the unique constraint
+// here guarantees one review per (buyer, listing).
+model Review {
+  id     String @id @default(cuid())
+  buyer  User   @relation(fields: [buyerId], references: [id])
+  buyerId String
+
+  listing   Listing @relation(fields: [listingId], references: [id])
+  listingId String
+
+  rating     Int // 1–5, validated app-side
+  body       String?
+  isVerified Boolean @default(false)
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+
+  @@unique([buyerId, listingId])
+  @@index([listingId])
+}
+
+// ===========================================================================
+//  DISCOVERY: CATEGORIES (explicit many-to-many)
+// ===========================================================================
+
+// Explicit join table (rather than implicit m:n) so we can later add
+// per-assignment metadata like "is this the primary category" without a
+// migration headache.
+model Category {
+  id   String @id @default(cuid())
+  slug String @unique // /categories/sales-automation
+  name String
+  // Optional self-reference for nested categories later.
+  parentId String?
+  parent   Category?  @relation("CategoryTree", fields: [parentId], references: [id])
+  children Category[] @relation("CategoryTree")
+
+  listings CategoriesOnListings[]
+}
+
+model CategoriesOnListings {
+  listing    Listing  @relation(fields: [listingId], references: [id])
+  listingId  String
+  category   Category @relation(fields: [categoryId], references: [id])
+  categoryId String
+  isPrimary  Boolean  @default(false)
+  assignedAt DateTime @default(now())
+
+  @@id([listingId, categoryId])
+  @@index([categoryId])
+}

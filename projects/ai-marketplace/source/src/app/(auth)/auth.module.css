@@ -1,0 +1,71 @@
+.authWrap {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  padding: 2rem 1rem;
+}
+
+.authCard {
+  width: 100%;
+  max-width: 400px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+}
+
+/* Wordmark — the one bit of personality on an otherwise quiet page. The bracket
+   nods to "connecting source to customer": [ai] as a callable unit. */
+.brand {
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.75rem;
+  color: var(--ink);
+}
+.brand .bracket {
+  color: var(--accent);
+}
+
+.authCard h1 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.35rem;
+}
+.authCard .sub {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0 0 1.5rem;
+}
+
+.authCard .btn {
+  width: 100%;
+  margin-top: 0.25rem;
+}
+
+.switchLine {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.875rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+.successCard {
+  text-align: center;
+}
+.successCard .check {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--accent-tint);
+  color: var(--accent);
+  display: grid;
+  place-items: center;
+  margin: 0 auto 1rem;
+  font-size: 1.3rem;
+}

@@ -1,13 +1,15 @@
 # Project register — where each track ends
 
-Portfolio edition: 14 September 2026. This is the authoritative register for
+Portfolio edition: 16 September 2026. This is the authoritative register for
 the showcased scope. These are editorial endpoints, not claims that services
 have been stopped, deployed or changed mode.
 
 | Track | Endpoint | Delivered evidence | Outside this endpoint |
 | --- | --- | --- | --- |
-| AImazon | Application prototype documented | Access, transactional intake, escalation and human-decision excerpts; architecture and concrete gaps | Complete sandbox workflow, cancellation, MCP forwarding, webhook replay safety and integration tests |
-| Veggie Kitchen | One finished episode; wider workflow archived | Preview frame and inspected 117-second render metadata; source-stage audit | Episode two, current-provider rerun, distribution package and audience or client outcomes |
+| AImazon | Application prototype with source | UI, API, schema/migrations; Prisma generation, typecheck and build verified | Complete sandbox workflow, cancellation, MCP forwarding, webhook replay safety and integration tests |
+| Brain | Archived forecasting/research code | 50 Python files and synthetic statistical walkthrough | Real-world predictive accuracy, complete installation and profitability |
+| Mac Agent | Archived local tooling | Four modules and temporary-database memory walkthrough | Full monitoring, scheduling and uptime verification |
+| Veggie Kitchen | One finished episode; wider workflow archived | Preview frame, inspected 117-second render metadata and 14 source modules | Episode two, current-provider rerun, distribution package and audience or client outcomes |
 | LLM quality gate | Completed small demo | Included code, examples, exit codes and 6 passing tests | Semantic correctness and real-model evaluation |
 | CatalogCue / StoreWatch | Completed offline demonstration; wider product unfinished | Included engine, six-step runnable walkthrough, expected outcomes and 19 passing tests | User acceptance, hosted operation and customer adoption |
 | Prediction-market automation | Historical source study | Adapter, execution, records and reconciliation modules inspected | Canonical runnable version and reconciled financial outcomes |
@@ -25,8 +27,8 @@ the claim, a result and a remaining gap. Research can end with “the hypothesis
 did not earn further investment.” A prototype can end with a documented
 interface and a clearly named unfinished path.
 
-The Python examples can be run here. The marketplace excerpts can be read
-but are not standalone software. The video frame illustrates a retained
+The Python examples can be run here. The marketplace application source is
+included with setup instructions and unfinished flows. The video frame illustrates a retained
 completed artifact; its full render is available for a walkthrough. These
 different evidence types do not inherit the Python examples' passing tests.
 
