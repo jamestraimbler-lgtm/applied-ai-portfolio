@@ -19,6 +19,8 @@ Contact: [daan@superposition.life](mailto:daan@superposition.life)
 
 | Strength | Example to discuss |
 | --- | --- |
+| Building custom business workflows | [FinanZen](../projects/finanzen/README.md): CRM, document checklists, encrypted intake and human-reviewed AI drafts |
+| Access rules and recoverable events | [Membership backend](../projects/membership-backend/README.md): session controls, event retries and persistent state |
 | Connecting a complete workflow | [AImazon](../projects/ai-marketplace/README.md): accounts and roles, validated intake, database transactions, submission review and external events |
 | Learning across tools and domains | [Veggie Kitchen](../projects/veggie-kitchen/README.md): structured scripts, generated scene media, voices, captions and assembly into one finished episode |
 | Handling operational details | [CatalogCue](../projects/catalogcue/README.md): distinguish a temporary change from a confirmed one and retain failed notifications |

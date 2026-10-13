@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Logboek — FinanZen{% endblock %}
+{% block content %}
+<div class="page-toolbar">
+  <div class="toolbar-left">
+    <a href="{{ url_for('dossiers') }}" class="terug-link">← Terug</a>
+    <h1>Logboek{% if zaak_id %} — dossier #{{ zaak_id }}{% endif %}</h1>
+  </div>
+</div>
+<div class="blok">
+  <table class="data-tabel">
+    <thead><tr><th>Tijdstip</th><th>Actie</th><th>Details</th><th>Dossier</th></tr></thead>
+    <tbody>
+    {% for r in regels %}
+    <tr>
+      <td class="subtext">{{ r.timestamp | datum_tijd }}</td>
+      <td>{{ r.actie }}</td>
+      <td>{{ r.details or '—' }}</td>
+      <td>{% if r.zaak_id %}<a href="{{ url_for('dossier_detail', zaak_id=r.zaak_id) }}">#{{ r.zaak_id }}</a>{% else %}—{% endif %}</td>
+    </tr>
+    {% else %}
+    <tr><td colspan="4" class="leeg">Geen logboekregels.</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

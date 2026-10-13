@@ -47,3 +47,6 @@ wallet.json
 output/
 secrets/
 credentials/
+
+# FinanZen local runtime records must never enter the portfolio
+projects/finanzen/source/data/

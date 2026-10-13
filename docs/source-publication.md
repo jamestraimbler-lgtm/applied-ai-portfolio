@@ -1,5 +1,23 @@
 # Source publication — 16 September 2026
 
+## Addition on 13 October 2026
+
+Added FinanZen CRM/document-review source, selected membership-backend source
+and tests, and Lost Temple logic modules/tests. Original runtime records,
+customer documents, environment/configuration files, website books/artwork and
+private histories are excluded. FinanZen's new synthetic harness redirects
+all data paths before importing the app and mocks inference. Its numeric
+fixtures contain generated scenarios rather than customer records.
+
+The membership snapshot is selected review material, not a runnable copy of
+the original website. Lost Temple includes runnable round/progression tests.
+The [refreshed verification](verification-2026-10-13.md) records results and
+limits. The whole portfolio passed a redacted Gitleaks directory scan before
+publication; no credential findings were reported. This is a credential check,
+not a security or privacy certification.
+
+## Earlier edition
+
 This edition makes the substantial projects reviewable in one repository.
 The source was copied into a fresh checkout of the existing public portfolio;
 private project histories and runtime data were not imported.

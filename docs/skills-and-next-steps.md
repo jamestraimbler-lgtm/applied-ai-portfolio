@@ -11,6 +11,9 @@ my contribution directly.
 
 | Area | Concrete evidence | A useful assessment |
 | --- | --- | --- |
+| Custom CRM and document workflow | [FinanZen](../projects/finanzen/README.md): dossiers, tasks, audit, encrypted uploads and human confirmation of AI drafts | Trace a document through draft, correction, confirmation and checklist update |
+| Access control and recovery | [Membership backend](../projects/membership-backend/README.md): sessions, duplicate events, current-state reconciliation and restart tests | Explain a failed event and the subsequent recovery without claiming a live charge |
+| Game-state modeling | [The Lost Temple](../projects/lost-temple/README.md): lifecycle, reward idempotency and concurrent save merge | Explain how stale events and saved data are prevented from granting rewards |
 | Connecting a product's backend | [AImazon](../projects/ai-marketplace/README.md): access rules, intake, transactions, review and events | Follow one submission and explain the next missing step |
 | Learning across a creative workflow | [Veggie Kitchen](../projects/veggie-kitchen/README.md): scene scripts, images, animation, voices, captions and one final episode | Explain the stages and investigate an intermediate failure |
 | Practical automation | [CatalogCue engine](../projects/catalogcue/storewatch.py): confirmation, state and retries | Adapt an agreed requirement and explain delivery behavior |

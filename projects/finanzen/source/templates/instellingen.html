@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block title %}Instellingen — FinanZen{% endblock %}
+{% block content %}
+<div class="page-toolbar">
+  <div class="toolbar-left"><h1>Instellingen — normjaar {{ jaar }}</h1></div>
+  <div class="toolbar-right">
+    <a href="{{ url_for('backup') }}" class="btn-primary">↓ Back-up maken</a>
+  </div>
+</div>
+
+<form method="post" class="formulier">
+  <div class="blok">
+    <h3>NHG-normen {{ jaar }}</h3>
+    <p class="blok-toelichting">Bron: NHG Voorwaarden &amp; Normen {{ jaar }}. Elk jaar bij te werken (meestal in november).</p>
+    <div class="form-rij">
+      <label>Kostengrens (€) <input type="number" name="nhg_grens" value="{{ cfg.get('nhg_grens','470000') }}" step="1000"></label>
+      <label>Kostengrens met EBV (€) <input type="number" name="nhg_grens_ebv" value="{{ cfg.get('nhg_grens_ebv','498200') }}" step="100"></label>
+      <label>Borgtochtprovisie (%) <input type="number" name="nhg_premie_pct" value="{{ cfg.get('nhg_premie_pct','0.4') }}" step="0.05"></label>
+    </div>
+  </div>
+
+  <div class="blok">
+    <h3>Energielabel-opslagen op leencapaciteit {{ jaar }}</h3>
+    <p class="blok-toelichting">Bron: art. 4 Tijdelijke regeling hypothecair krediet. Elk jaar in november bijwerken.</p>
+    <div class="form-rij">
+      <label>E, F, G (€) <input type="number" name="energielabel_EFG" value="{{ cfg.get('energielabel_EFG','0') }}" step="500"></label>
+      <label>C, D (€) <input type="number" name="energielabel_CD" value="{{ cfg.get('energielabel_CD','5000') }}" step="500"></label>
+      <label>A, B (€) <input type="number" name="energielabel_AB" value="{{ cfg.get('energielabel_AB','10000') }}" step="500"></label>
+    </div>
+    <div class="form-rij">
+      <label>A+, A++ (€) <input type="number" name="energielabel_Aplusplus" value="{{ cfg.get('energielabel_Aplusplus','20000') }}" step="500"></label>
+      <label>A+++ (€) <input type="number" name="energielabel_Aplusplusplus" value="{{ cfg.get('energielabel_Aplusplusplus','25000') }}" step="500"></label>
+      <label>A++++ (€) <input type="number" name="energielabel_A4plus" value="{{ cfg.get('energielabel_A4plus','30000') }}" step="500"></label>
+    </div>
+  </div>
+
+  <div class="blok">
+    <h3>Toetsrente</h3>
+    <p class="blok-toelichting">Minimale toetsrente bij rentevaste periode &lt; 10 jaar (art. 3 lid 9 Trhk). AFM publiceert dit elk kwartaal.</p>
+    <label>Minimum toetsrente (%) <input type="number" name="toetsrente_minimum" value="{{ cfg.get('toetsrente_minimum','5.0') }}" step="0.1" style="width:120px"></label>
+  </div>
+
+  <div class="blok">
+    <h3>Lokale AI (documentinname)</h3>
+    <p class="blok-toelichting">Het model dat documenten uitleest. Draait lokaal via Ollama; er gaat niets naar internet.
+      Een kleiner model is sneller, een groter model iets nauwkeuriger. Na het kiezen van een nieuw model
+      moet u dat eenmalig downloaden (Ollama doet dit automatisch bij het eerste gebruik, of via "Installeer AI (Ollama)").</p>
+    {% set huidig_model = cfg.get('ollama_model','qwen2.5:7b') %}
+    <label>AI-model
+      <select name="ollama_model" style="width:300px">
+        {% for m, oms in [('qwen2.5:7b','qwen2.5:7b — nauwkeurig (huidige keuze)'),
+                          ('qwen2.5:3b','qwen2.5:3b — sneller'),
+                          ('llama3.2:3b','llama3.2:3b — snelst')] %}
+        <option value="{{ m }}" {% if huidig_model==m %}selected{% endif %}>{{ oms }}</option>
+        {% endfor %}
+        {% if huidig_model not in ['qwen2.5:3b','llama3.2:3b','qwen2.5:7b'] %}
+        <option value="{{ huidig_model }}" selected>{{ huidig_model }} (huidig)</option>
+        {% endif %}
+      </select>
+    </label>
+  </div>
+
+  <div class="blok">
+    <h3>Back-up</h3>
+    <p class="blok-toelichting">De back-up wordt versleuteld opgeslagen. Alleen te herstellen via de applicatie met uw wachtwoord.</p>
+    <label>Back-up locatie (map)
+      <input type="text" name="backup_map" value="{{ cfg.get('backup_map','~/Desktop') }}" style="width:360px"
+             placeholder="~/Desktop">
+    </label>
+  </div>
+
+  <div class="form-acties">
+    <button type="submit" class="btn-primary">Instellingen opslaan</button>
+    <a href="{{ url_for('wachtwoord_wijzigen') }}" class="btn-secondary">Wachtwoord wijzigen</a>
+  </div>
+</form>
+
+<div class="blok blok-info">
+  <h3>Wanneer bijwerken?</h3>
+  <ul>
+    <li><strong>November:</strong> NHG-normen en energielabel-bedragen voor het volgende jaar.</li>
+    <li><strong>Begin januari:</strong> fiscale en sociale cijfers (voor de hypotheekberekening in Fase 2.3).</li>
+    <li><strong>Per kwartaal:</strong> AFM-toetsrente controleren op <a href="https://www.afm.nl" target="_blank">afm.nl</a>.</li>
+  </ul>
+</div>
+{% endblock %}

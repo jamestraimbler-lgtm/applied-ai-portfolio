@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+{% block title %}Maximale hypotheek — FinanZen{% endblock %}
+{% block content %}
+
+<div class="page-toolbar">
+  <div class="toolbar-left">
+    <h1>Maximale hypotheek</h1>
+  </div>
+  <span class="tekst-sub">Indicatief volgens Trhk {{ normjaar }} — rekenblad is leidend</span>
+</div>
+
+<form method="post" class="formulier">
+
+  <div class="blok">
+    <h3>Inkomen en woning</h3>
+    <div class="form-rij">
+      <label>Bruto jaarinkomen 1 (€) *
+        <input type="number" name="inkomen1" min="0" step="1" required
+               value="{{ form.get('inkomen1','') }}">
+      </label>
+      <label>Bruto jaarinkomen 2 (€)
+        <input type="number" name="inkomen2" min="0" step="1"
+               value="{{ form.get('inkomen2','') }}">
+      </label>
+    </div>
+    <div class="form-rij">
+      <label>Woningwaarde / koopsom (€) *
+        <input type="number" name="woningwaarde" min="1" step="1" required
+               value="{{ form.get('woningwaarde','') }}">
+      </label>
+      <label>Energielabel
+        <select name="energielabel">
+          {% for lbl in energielabels %}
+          <option value="{{ lbl }}" {% if form.get('energielabel')==lbl %}selected{% endif %}>{{ lbl }}</option>
+          {% endfor %}
+        </select>
+      </label>
+    </div>
+  </div>
+
+  <div class="blok">
+    <h3>Rente en lening</h3>
+    <div class="form-rij">
+      <label>Hypotheekrente (%) *
+        <input type="number" name="rente" min="0.01" max="15" step="0.001" required
+               value="{{ form.get('rente','') }}">
+      </label>
+      <label>Rentevaste periode ≥ 10 jaar?
+        <select name="rentevast10">
+          <option value="ja" {% if form.get('rentevast10','ja')=='ja' %}selected{% endif %}>Ja</option>
+          <option value="nee" {% if form.get('rentevast10')=='nee' %}selected{% endif %}>Nee (toetsrente min. 5%)</option>
+        </select>
+      </label>
+      <label>Niet-aftrekbaar deel (%) — box 3 / aflossingsvrij
+        <input type="number" name="niet_aftrekbaar" min="0" max="100" step="1"
+               value="{{ form.get('niet_aftrekbaar','0') }}">
+      </label>
+    </div>
+  </div>
+
+  <div class="blok">
+    <h3>Verplichtingen</h3>
+    <div class="form-rij">
+      <label>Maandlasten BKR / leningen (€/mnd)
+        <input type="number" name="bkr" min="0" step="0.01" value="{{ form.get('bkr','0') }}">
+      </label>
+      <label>Alimentatie die u betaalt (€/mnd)
+        <input type="number" name="alimentatie" min="0" step="0.01" value="{{ form.get('alimentatie','0') }}">
+      </label>
+    </div>
+    <div class="form-rij">
+      <label>Oorspronkelijke studieschuld (€)
+        <input type="number" name="studieschuld" min="0" step="1" value="{{ form.get('studieschuld','0') }}">
+      </label>
+      <label>Leenstelsel studieschuld
+        <select name="leenstelsel">
+          <option value="nieuw" {% if form.get('leenstelsel','nieuw')=='nieuw' %}selected{% endif %}>Nieuw (na 1-9-2015, 0,35%)</option>
+          <option value="oud" {% if form.get('leenstelsel')=='oud' %}selected{% endif %}>Oud (voor 1-9-2015, 0,65%)</option>
+        </select>
+      </label>
+    </div>
+  </div>
+
+  <div class="blok">
+    <h3>Pensioen</h3>
+    <div class="form-rij">
+      <label>AOW-leeftijd binnen 10 jaar?
+        <select name="aow10">
+          <option value="nee" {% if form.get('aow10','nee')=='nee' %}selected{% endif %}>Nee</option>
+          <option value="ja" {% if form.get('aow10')=='ja' %}selected{% endif %}>Ja</option>
+        </select>
+      </label>
+      <label>Verwacht bruto pensioeninkomen (€/jaar)
+        <input type="number" name="pensioen" min="0" step="1" value="{{ form.get('pensioen','0') }}">
+      </label>
+    </div>
+  </div>
+
+  <div class="form-acties">
+    <button type="submit" class="btn-primary">Bereken</button>
+  </div>
+</form>
+
+{% if resultaat %}
+{% set t = resultaat.tussenstappen %}
+{% set u = resultaat.uitkomst %}
+<div class="blok" style="margin-top:24px">
+  <h3>Uitkomst</h3>
+  <p style="font-size:1.6rem; margin:8px 0">
+    <strong>€ {{ '{:,.0f}'.format(u.maximale_hypotheek).replace(',', '.') }}</strong>
+    <span class="tekst-sub">— begrensd door {{ u.begrenzing }}</span>
+  </p>
+  <table class="tabel">
+    <tr><td>Toetsinkomen</td><td>€ {{ '{:,.0f}'.format(t.toetsinkomen).replace(',', '.') }}</td></tr>
+    <tr><td>Toetsrente</td><td>{{ t.toetsrente_pct }}% (renteband {{ t.rentebandindex }})</td></tr>
+    <tr><td>Financieringslastpercentage (gewogen)</td><td>{{ t.fl_pct_gewogen }}%</td></tr>
+    <tr><td>Verplichtingen per jaar</td><td>€ {{ '{:,.0f}'.format(t.verplichtingen_per_jaar).replace(',', '.') }}</td></tr>
+    <tr><td>Energielabel-opslag</td><td>€ {{ '{:,.0f}'.format(t.energielabel_bedrag).replace(',', '.') }}</td></tr>
+    <tr><td>Max o.b.v. inkomen (nu)</td><td>€ {{ '{:,.0f}'.format(t.max_obv_inkomen_nu).replace(',', '.') }}</td></tr>
+    {% if t.pensioentoets %}
+    <tr><td>Max o.b.v. pensioeninkomen</td><td>€ {{ '{:,.0f}'.format(t.pensioentoets.max_obv_pensioeninkomen).replace(',', '.') }}</td></tr>
+    {% endif %}
+    <tr><td>Max o.b.v. woningwaarde (100%)</td><td>€ {{ '{:,.0f}'.format(u.max_obv_woningwaarde).replace(',', '.') }}</td></tr>
+  </table>
+</div>
+
+{% if nhg %}
+<div class="blok">
+  <h3>NHG-toets (naast de uitkomst)</h3>
+  {% if nhg.nhg_mogelijk %}
+  <p>Koopsom valt binnen de NHG-kostengrens van
+     € {{ '{:,.0f}'.format(nhg.kostengrens_toegepast).replace(',', '.') }}.
+     Premie ({{ nhg.premie_pct }}%): € {{ '{:,.2f}'.format(nhg.premie_bedrag) }}.</p>
+  {% else %}
+  <p>Koopsom ligt boven de NHG-kostengrens van
+     € {{ '{:,.0f}'.format(nhg.kostengrens_toegepast).replace(',', '.') }} — NHG niet mogelijk.</p>
+  {% endif %}
+</div>
+{% endif %}
+
+<p class="tekst-sub">Indicatieve berekening; geen advies. Acceptatiecriteria van de
+geldverstrekker zijn bepalend. Normwaarden {{ normjaar }} (Staatscourant 2025, 36471).</p>
+{% endif %}
+
+{% endblock %}
