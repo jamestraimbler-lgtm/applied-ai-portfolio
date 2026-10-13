@@ -10,18 +10,15 @@ credentials and bulk operational ledgers were excluded.
 | --- | --- | --- |
 | Existing portfolio verifier | Passed | 25 tests, offline walkthroughs, archived syntax and relative links |
 | Original AImazon TypeScript check | Passed | Existing application types remain consistent; no deployment or live payment proof |
-| FinanZen calculation suite | 17 passed | Regression behavior under archived inputs |
-| FinanZen synthetic workflow | Passed | Temporary CRM, encrypted upload/download, draft/human confirmation, remote AI refusal, checklist, task, audit and lock behavior; inference mocked |
-| Python versus JavaScript calculations | 314 scenarios matched within one cent | Cross-language consistency; no independent regulatory validation |
 | Membership Node and Worker suites | 24 passed | Local integration, access controls, webhook retries and restart persistence; external services intercepted |
 | Robinhood transaction-system suite | 431 passed | Mocked execution/state tests; no funded success or trading profitability |
 | Lost Temple local Luau suites | Eight suites passed | Game logic, save merge, reward rules, navigation and modeled layouts; no fresh Studio session |
 
 ## Source scope
 
-FinanZen includes selected application code, templates, archived calculation
-inputs and a newly added synthetic audit harness. The harness is verification
-work performed for this audit, not evidence of an earlier delivered feature.
+FinanZen was removed after Daan clarified that he did not build it. Its audit
+checks cannot be used as evidence of his project experience.
+
 Membership includes selected backend/test files; its complete website and
 dependency closure are omitted. Lost Temple includes two logic modules, their
 catalog dependency and tests. Copied source is unchanged; no private history,

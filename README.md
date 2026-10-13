@@ -16,7 +16,6 @@ actually does. [How I work](docs/how-i-work.md).
 
 | Project | What I built | Inspect or run | Status |
 | --- | --- | --- | --- |
-| **[FinanZen](projects/finanzen/README.md)** | Custom CRM: dossiers, checklists, encrypted document intake, local AI drafts and human confirmation | [Application](projects/finanzen/source/app.py), [synthetic workflow](projects/finanzen/check_synthetic.py) | Local prototype; synthetic workflow, 17 calculation tests and 314 cross-language scenarios verified |
 | **[Membership backend](projects/membership-backend/README.md)** | Sessions, paid-content access, subscription-event retries and restart persistence | [Selected backend and tests](projects/membership-backend) | 24 tests passed in original local project; selected snapshot, live payments unconnected |
 | **[The Lost Temple](projects/lost-temple/README.md)** | Round state, save merging, reward rules and earned progression in Luau | [Modules and local tests](projects/lost-temple) | Game logic verified locally; no fresh Studio or publication check |
 | **[AImazon](projects/ai-marketplace/README.md)** | Marketplace for discovering and listing AI agents: accounts, seller workflows, database transactions, review queues and billing integration | [Application source](projects/ai-marketplace/source), [API routers](projects/ai-marketplace/source/src/server/api/routers), [data model](projects/ai-marketplace/source/prisma/schema.prisma) | Substantial prototype; typechecked. Billing and gateway work remain |
@@ -26,8 +25,7 @@ actually does. [How I work](docs/how-i-work.md).
 | **[Veggie Kitchen](projects/veggie-kitchen/README.md)** | Scripts, images, animation, voices, captions and assembly for a 117-second video | [Pipeline source](projects/veggie-kitchen/source), [preview](projects/veggie-kitchen/media/episode-1-preview.png) | One finished episode; wider pipeline archived |
 | **[LLM quality gate](demos/llm-quality-gate/README.md)** | Explicit checks for text and JSONL outputs | [Code and six tests](demos/llm-quality-gate) | Small completed learning demo |
 
-For a quick engineering review, start with FinanZen's document-confirmation
-workflow and AImazon's API/data model, then run CatalogCue. Membership shows
+For a quick engineering review, start with AImazon's API/data model, then run CatalogCue. Membership shows
 access and event handling; Lost Temple shows game-state rules. Brain and
 Veggie Kitchen provide research and creative-workflow breadth.
 

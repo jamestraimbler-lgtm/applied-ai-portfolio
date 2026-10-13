@@ -188,12 +188,8 @@ of done. [Strengths and learning plan](../docs/skills-and-next-steps.md).
 
 ## October 13: overlooked engineering evidence
 
-A new source audit brought FinanZen's custom CRM and human-reviewed document
-intake into the portfolio. Membership-backend tests add concrete access,
-subscription-event and restart-recovery evidence. Lost Temple adds game-state
-and progression rules. These were missing from the earlier selection.
-
-The new synthetic CRM harness was written during this audit, using the
-existing application source, fabricated records and mocked inference.
-It is a reproducibility aid rather than a claim that AI extraction accuracy or
-customer adoption has been validated. [Fresh checks and limits](../docs/verification-2026-10-13.md).
+The audit added membership-backend recovery tests and Lost Temple game-state
+logic. FinanZen was initially attributed to me incorrectly: I did not build
+it. It has been removed from my portfolio and CV. Being confident I could
+build a similar tool with AI assistance is not a completed-project claim.
+[Fresh checks and limits](../docs/verification-2026-10-13.md).

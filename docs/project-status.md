@@ -6,7 +6,6 @@ have been stopped, deployed or changed mode.
 
 | Track | Endpoint | Delivered evidence | Outside this endpoint |
 | --- | --- | --- | --- |
-| FinanZen | Local CRM and document-review prototype | Selected source, temporary-data workflow, 17 tests and 314 Python/JavaScript parity scenarios | Real extraction accuracy, shared-user security, compliance and production adoption |
 | Membership backend | Locally tested Node/Cloudflare rebuild | Selected source/test files; 24 tests passed in original project, including restart persistence | Complete runnable public snapshot, live billing/email and production deployment |
 | The Lost Temple | Game logic and progression prototype | Selected Luau modules and runnable lifecycle/save tests | Fresh Studio/multiplayer verification, publication and player outcomes |
 | AImazon | Application prototype with source | UI, API, schema/migrations; Prisma generation, typecheck and build verified | Complete sandbox workflow, cancellation, MCP forwarding, webhook replay safety and integration tests |

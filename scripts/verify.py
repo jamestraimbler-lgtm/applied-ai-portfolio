@@ -59,7 +59,7 @@ def main() -> int:
         print("PASS: Mac Agent isolated memory walkthrough")
 
         source_count = 0
-        for folder in ["brain", "mac-agent", "veggie-kitchen", "finanzen"]:
+        for folder in ["brain", "mac-agent", "veggie-kitchen"]:
             for source in (ROOT / "projects" / folder / "source").rglob("*.py"):
                 compile(source.read_text(encoding="utf-8"), str(source), "exec")
                 source_count += 1

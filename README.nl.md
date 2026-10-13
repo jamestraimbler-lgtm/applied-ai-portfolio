@@ -21,7 +21,6 @@ praktisch kunt beoordelen.
 
 | Je wilt… | Bekijk… |
 | --- | --- |
-| Een zelfgebouwde CRM en documentproces bekijken | [FinanZen: dossiers, checklists, AI-concepten en menselijke bevestiging](projects/finanzen/README.md) |
 | Toegang en betalingsgebeurtenissen onderzoeken | [Membershipbackend: sessies, herhaalde gebeurtenissen en herstel na herstart](projects/membership-backend/README.md) |
 | Spelregels en voortgang zien | [The Lost Temple: rondeverloop en samenvoegen van opgeslagen voortgang](projects/lost-temple/README.md) |
 | Zien hoe ik de onderdelen van een product verbind | [AImazon: accounts, inzendingen, beoordeling en koppelingen](projects/ai-marketplace/README.md) |

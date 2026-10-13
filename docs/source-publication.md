@@ -2,12 +2,11 @@
 
 ## Addition on 13 October 2026
 
-Added FinanZen CRM/document-review source, selected membership-backend source
-and tests, and Lost Temple logic modules/tests. Original runtime records,
-customer documents, environment/configuration files, website books/artwork and
-private histories are excluded. FinanZen's new synthetic harness redirects
-all data paths before importing the app and mocks inference. Its numeric
-fixtures contain generated scenarios rather than customer records.
+Added selected membership-backend source/tests and Lost Temple logic modules.
+Runtime records, configuration, private histories, website books and artwork
+are excluded. FinanZen was briefly included during the source audit, but Daan
+clarified that he did not build it. Its source and personal-project attribution
+were removed; it is not evidence of his completed work.
 
 The membership snapshot is selected review material, not a runnable copy of
 the original website. Lost Temple includes runnable round/progression tests.

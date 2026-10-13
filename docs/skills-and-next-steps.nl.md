@@ -11,7 +11,6 @@ beschrijft hoe mijn eigen begrip direct beoordeeld kan worden.
 
 | Onderwerp | Concreet bewijs | Een nuttige beoordeling |
 | --- | --- | --- |
-| Zelfgebouwde CRM en documentproces | [FinanZen](../projects/finanzen/README.md): dossiers, taken, logboek, versleutelde uploads en menselijke bevestiging | Een document volgen van AI-concept tot correctie en gecontroleerd checklistitem |
 | Toegang en herstel | [Membershipbackend](../projects/membership-backend/README.md): sessies, dubbele gebeurtenissen en herstarttests | Een mislukte gebeurtenis en herstel uitleggen zonder een echte betaling te claimen |
 | Speltoestand en voortgang | [The Lost Temple](../projects/lost-temple/README.md): rondeverloop, beloningen en opgeslagen voortgang samenvoegen | Uitleggen waarom oude gebeurtenissen geen extra beloning mogen geven |
 | De backend van een product verbinden | [Marktplaats](../projects/ai-marketplace/README.md): toegang, invoer, transacties, beoordeling en gebeurtenissen | Een inzending volgen en de volgende ontbrekende stap uitleggen |

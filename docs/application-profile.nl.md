@@ -20,7 +20,6 @@ samenkomen.
 
 | Sterk punt | Voorbeeld om te bespreken |
 | --- | --- |
-| Bedrijfsprocessen bouwen | [FinanZen](../projects/finanzen/README.md): eigen CRM, checklists, versleutelde intake en AI-concepten met menselijke controle |
 | Toegang en herstelbaar gedrag | [Membershipbackend](../projects/membership-backend/README.md): sessies, herhaalde gebeurtenissen en blijvende toestand |
 | Onderdelen tot een bruikbaar proces verbinden | [AImazon](../projects/ai-marketplace/README.md): accounts en rollen, invoercontrole, transacties, beoordeling en externe gebeurtenissen |
 | Nieuwe hulpmiddelen en vakgebieden oppakken | [Veggie Kitchen](../projects/veggie-kitchen/README.md): scripts, gegenereerde beelden, animatie, stemmen, ondertiteling en één afgeronde aflevering |
